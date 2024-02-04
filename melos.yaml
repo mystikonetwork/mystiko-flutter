@@ -1,0 +1,4 @@
+name: mystiko_flutter
+
+packages:
+  - lib/**
