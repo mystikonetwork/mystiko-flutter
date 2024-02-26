@@ -1,4 +1,16 @@
 name: mystiko_flutter
 
 packages:
-  - lib/**
+  - packages/**
+
+scripts:
+  build:apple:
+    run: bash scripts/build-apple.sh
+    description: Build the XCFramework for iOS and macOS.
+
+  test:dart:
+    run: melos exec -c 1 --fail-fast -- "dart test test"
+    description: Run Dart tests for a specific package in this project.
+    packageFilters:
+      flutter: false
+      dirExists: test

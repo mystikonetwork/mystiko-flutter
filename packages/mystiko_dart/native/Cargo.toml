@@ -1,0 +1,20 @@
+[package]
+name = "mystiko_lib_bridge"
+version = "0.0.0"
+edition = "2018"
+
+[lib]
+crate-type = ["staticlib", "cdylib"]
+
+[build-dependencies]
+flutter_rust_bridge_codegen = "=1.82.6"
+
+[dependencies]
+flutter_rust_bridge = { version = "=1.82.6" }
+anyhow = { version = "1.0.*" }
+serde = { version = "1.0.*" }
+serde_json = { version = "1.0.*" }
+prost = { version = "0.11.9" }
+mystiko_config = { git = "ssh://git@github.com/mystikonetwork/mystiko-rust.git", rev = "5077c34", features = ["proto", "fs"] }
+mystiko_lib = { git = "ssh://git@github.com/mystikonetwork/mystiko-rust.git", rev = "5077c34" }
+mystiko_protos = { git = "ssh://git@github.com/mystikonetwork/mystiko-rust.git", rev = "5077c34", default-features = false, features = ["mystiko-api-config-v1", "mystiko-api-handler-v1"] }

@@ -1,0 +1,21 @@
+PODS:
+  - FlutterMacOS (1.0.0)
+  - mystiko_flutter (0.0.1)
+
+DEPENDENCIES:
+  - FlutterMacOS (from `Flutter/ephemeral`)
+  - mystiko_flutter (from `Flutter/ephemeral/.symlinks/plugins/mystiko_flutter/macos`)
+
+EXTERNAL SOURCES:
+  FlutterMacOS:
+    :path: Flutter/ephemeral
+  mystiko_flutter:
+    :path: Flutter/ephemeral/.symlinks/plugins/mystiko_flutter/macos
+
+SPEC CHECKSUMS:
+  FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
+  mystiko_flutter: 33f06ed4f1cd2f44af41171b666643a84873a8ec
+
+PODFILE CHECKSUM: 236401fc2c932af29a9fcf0e97baeeb2d750d367
+
+COCOAPODS: 1.14.3

@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: mystiko_dart,mystiko_flutter
+dependency_overrides:
+  mystiko_dart:
+    path: ../../mystiko_dart
+  mystiko_flutter:
+    path: ..
