@@ -2,8 +2,8 @@ import 'package:mystiko_flutter/mystiko_flutter.dart';
 
 // ignore: always_use_package_imports
 import 'ffi/stub.dart'
-if (dart.library.io) 'ffi/io.dart'
-if (dart.library.html) 'ffi/web.dart';
+    if (dart.library.io) 'ffi/io.dart'
+    if (dart.library.html) 'ffi/web.dart';
 
 /// Flutter extensions for the MystikoInterface to make it easier to work with
 extension FlutterMystikoInterface on MystikoInterface {

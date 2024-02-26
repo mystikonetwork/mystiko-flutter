@@ -3,7 +3,6 @@ import 'dart:typed_data';
 import 'package:fixnum/fixnum.dart';
 import 'package:meta/meta.dart';
 import 'package:mystiko_dart/mystiko_dart.dart';
-import 'package:mystiko_dart/src/interface/scanner.dart';
 import 'package:mystiko_protos_dart/mystiko/api/index.dart';
 import 'package:mystiko_protos_dart/mystiko/api/scanner/index.dart';
 import 'package:mystiko_protos_dart/mystiko/core/scanner/index.dart';

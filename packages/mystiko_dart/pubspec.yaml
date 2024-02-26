@@ -17,6 +17,7 @@ dependencies:
       url: git@github.com:mystikonetwork/mystiko-protos-dart.git
       ref: 3db0956
   fixnum: ^1.1.0
+  uuid: any
 
 dev_dependencies:
   ffigen: ^8.0.2

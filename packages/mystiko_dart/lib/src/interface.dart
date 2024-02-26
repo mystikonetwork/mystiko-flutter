@@ -14,6 +14,7 @@ import 'impl/spend_impl.dart';
 import 'impl/synchronizer_impl.dart';
 
 /// The exposed API to interact with mystiko
+// ignore: non_constant_identifier_names
 final Mysitko = MystikoInterface._();
 
 /// The interface of the API to interact with mysitko_lib_bridge
