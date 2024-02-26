@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:mystiko_flutter/mystiko_flutter.dart' as mystiko_flutter;
+import 'package:mystiko_flutter/mystiko_flutter.dart';
+import 'package:mystiko_protos_dart/mystiko/api/index.dart';
+import 'package:mystiko_protos_dart/mystiko/common/index.dart';
+import 'package:mystiko_protos_dart/mystiko/config/index.dart';
+import 'package:mystiko_protos_dart/mystiko/core/index.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,14 +19,33 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late int sumResult;
-  late Future<int> sumAsyncResult;
-
   @override
   void initState() {
     super.initState();
-    sumResult = mystiko_flutter.sum(1, 2);
-    sumAsyncResult = mystiko_flutter.sumAsync(3, 4);
+    getConfig();
+  }
+
+  Future<void> initialize() async {
+    MystikoApi api = await Mysitko.mystikoApi();
+    Response<void, MystikoError> response = await api.initialize(
+        MystikoOptions(configOptions: ConfigOptions(isTestnet: true)));
+    print('initialize is success ${response.isSuccess}');
+    print('error msg ${response.errorMessage}');
+  }
+
+  void getConfig() async {
+    await initialize();
+
+    MystikoConfigApi api = await Mysitko.mystikoConfigApi();
+
+    Response<MystikoConfig, ConfigError> response = await api.get();
+    bool isSuccess = response.isSuccess;
+    String? msg = response.errorMessage;
+    print("isSuccess $isSuccess, errMsg $msg");
+    if (isSuccess) {
+      MystikoConfig config = response.data!;
+      print('config $config');
+    }
   }
 
   @override
@@ -37,33 +60,21 @@ class _MyAppState extends State<MyApp> {
         body: SingleChildScrollView(
           child: Container(
             padding: const EdgeInsets.all(10),
-            child: Column(
+            child: const Column(
               children: [
-                const Text(
+                Text(
                   'This calls a native function through FFI that is shipped as source in the package. '
-                  'The native code is built as part of the Flutter Runner build.',
+                      'The native code is built as part of the Flutter Runner build.',
                   style: textStyle,
                   textAlign: TextAlign.center,
                 ),
                 spacerSmall,
                 Text(
-                  'sum(1, 2) = $sumResult',
+                  'sum(1, 2) = 3',
                   style: textStyle,
                   textAlign: TextAlign.center,
                 ),
                 spacerSmall,
-                FutureBuilder<int>(
-                  future: sumAsyncResult,
-                  builder: (BuildContext context, AsyncSnapshot<int> value) {
-                    final displayValue =
-                        (value.hasData) ? value.data : 'loading';
-                    return Text(
-                      'await sumAsync(3, 4) = $displayValue',
-                      style: textStyle,
-                      textAlign: TextAlign.center,
-                    );
-                  },
-                ),
               ],
             ),
           ),
