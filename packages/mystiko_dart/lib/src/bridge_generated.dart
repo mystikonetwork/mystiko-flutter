@@ -13,8 +13,7 @@ import 'dart:async';
 import 'package:meta/meta.dart';
 import 'package:flutter_rust_bridge/flutter_rust_bridge.dart';
 import 'package:uuid/uuid.dart';
-import 'bridge_generated.io.dart'
-    if (dart.library.html) 'bridge_generated.web.dart';
+import 'bridge_generated.io.dart' if (dart.library.html) 'bridge_generated.web.dart';
 
 abstract class MystikoLibBridge {
   /// mystiko api
@@ -35,8 +34,7 @@ abstract class MystikoLibBridge {
 
   FlutterRustBridgeTaskConstMeta get kGetConfigConstMeta;
 
-  Future<Uint8List> findDefaultCircuit(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> findDefaultCircuit({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kFindDefaultCircuitConstMeta;
 
@@ -52,8 +50,7 @@ abstract class MystikoLibBridge {
 
   FlutterRustBridgeTaskConstMeta get kFindPeerChainsConstMeta;
 
-  Future<Uint8List> findAssetSymbols(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> findAssetSymbols({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kFindAssetSymbolsConstMeta;
 
@@ -65,38 +62,31 @@ abstract class MystikoLibBridge {
 
   FlutterRustBridgeTaskConstMeta get kFindBridgesConstMeta;
 
-  Future<Uint8List> findDepositContract(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> findDepositContract({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kFindDepositContractConstMeta;
 
-  Future<Uint8List> findDepositContractByAddress(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> findDepositContractByAddress({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kFindDepositContractByAddressConstMeta;
 
-  Future<Uint8List> findPoolContract(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> findPoolContract({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kFindPoolContractConstMeta;
 
-  Future<Uint8List> findPoolContracts(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> findPoolContracts({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kFindPoolContractsConstMeta;
 
-  Future<Uint8List> findPoolContractByAddress(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> findPoolContractByAddress({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kFindPoolContractByAddressConstMeta;
 
-  Future<Uint8List> findContractByAddress(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> findContractByAddress({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kFindContractByAddressConstMeta;
 
-  Future<Uint8List> getTransactionUrl(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> getTransactionUrl({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kGetTransactionUrlConstMeta;
 
@@ -121,8 +111,7 @@ abstract class MystikoLibBridge {
 
   FlutterRustBridgeTaskConstMeta get kFindByIdConstMeta;
 
-  Future<Uint8List> findByShieldedAddress(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> findByShieldedAddress({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kFindByShieldedAddressConstMeta;
 
@@ -134,33 +123,27 @@ abstract class MystikoLibBridge {
 
   FlutterRustBridgeTaskConstMeta get kUpdateByIdConstMeta;
 
-  Future<Uint8List> updateByShieldedAddress(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> updateByShieldedAddress({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kUpdateByShieldedAddressConstMeta;
 
-  Future<Uint8List> updateByPublicKey(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> updateByPublicKey({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kUpdateByPublicKeyConstMeta;
 
-  Future<Uint8List> updateEncryption(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> updateEncryption({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kUpdateEncryptionConstMeta;
 
-  Future<Uint8List> exportSecretKeyById(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> exportSecretKeyById({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kExportSecretKeyByIdConstMeta;
 
-  Future<Uint8List> exportSecretKeyByShieldedAddress(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> exportSecretKeyByShieldedAddress({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kExportSecretKeyByShieldedAddressConstMeta;
 
-  Future<Uint8List> exportSecretKeyByPublicKey(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> exportSecretKeyByPublicKey({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kExportSecretKeyByPublicKeyConstMeta;
 
@@ -181,8 +164,7 @@ abstract class MystikoLibBridge {
 
   FlutterRustBridgeTaskConstMeta get kSendDepositConstMeta;
 
-  Future<Uint8List> sendDepositWithGrpc(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> sendDepositWithGrpc({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kSendDepositWithGrpcConstMeta;
 
@@ -214,18 +196,15 @@ abstract class MystikoLibBridge {
 
   FlutterRustBridgeTaskConstMeta get kDepositUpdateConstMeta;
 
-  Future<Uint8List> depositUpdateBatch(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> depositUpdateBatch({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kDepositUpdateBatchConstMeta;
 
-  Future<Uint8List> depositUpdateByFilter(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> depositUpdateByFilter({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kDepositUpdateByFilterConstMeta;
 
-  Future<Uint8List> depositUpdateAll(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> depositUpdateAll({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kDepositUpdateAllConstMeta;
 
@@ -233,13 +212,11 @@ abstract class MystikoLibBridge {
 
   FlutterRustBridgeTaskConstMeta get kDepositDeleteConstMeta;
 
-  Future<Uint8List> depositDeleteBatch(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> depositDeleteBatch({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kDepositDeleteBatchConstMeta;
 
-  Future<Uint8List> depositDeleteByFilter(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> depositDeleteByFilter({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kDepositDeleteByFilterConstMeta;
 
@@ -285,8 +262,7 @@ abstract class MystikoLibBridge {
 
   FlutterRustBridgeTaskConstMeta get kSendSpendConstMeta;
 
-  Future<Uint8List> sendSpendWithGrpc(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> sendSpendWithGrpc({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kSendSpendWithGrpcConstMeta;
 
@@ -318,13 +294,11 @@ abstract class MystikoLibBridge {
 
   FlutterRustBridgeTaskConstMeta get kSpendUpdateConstMeta;
 
-  Future<Uint8List> spendUpdateBatch(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> spendUpdateBatch({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kSpendUpdateBatchConstMeta;
 
-  Future<Uint8List> spendUpdateByFilter(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> spendUpdateByFilter({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kSpendUpdateByFilterConstMeta;
 
@@ -336,13 +310,11 @@ abstract class MystikoLibBridge {
 
   FlutterRustBridgeTaskConstMeta get kSpendDeleteConstMeta;
 
-  Future<Uint8List> spendDeleteBatch(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> spendDeleteBatch({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kSpendDeleteBatchConstMeta;
 
-  Future<Uint8List> spendDeleteByFilter(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> spendDeleteByFilter({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kSpendDeleteByFilterConstMeta;
 
@@ -351,13 +323,11 @@ abstract class MystikoLibBridge {
   FlutterRustBridgeTaskConstMeta get kSpendDeleteAllConstMeta;
 
   /// synchronizer api
-  Future<Uint8List> chainSyncedBlock(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> chainSyncedBlock({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kChainSyncedBlockConstMeta;
 
-  Future<Uint8List> contractSyncedBlock(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> contractSyncedBlock({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kContractSyncedBlockConstMeta;
 
@@ -365,13 +335,11 @@ abstract class MystikoLibBridge {
 
   FlutterRustBridgeTaskConstMeta get kStatusConstMeta;
 
-  Future<Uint8List> synchronizerSync(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> synchronizerSync({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kSynchronizerSyncConstMeta;
 
-  Future<Uint8List> synchronizerReset(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> synchronizerReset({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kSynchronizerResetConstMeta;
 
@@ -392,20 +360,17 @@ abstract class MystikoLibBridge {
 
   FlutterRustBridgeTaskConstMeta get kUpdatePasswordConstMeta;
 
-  Future<Uint8List> exportMnemonicPhrase(
-      {required Uint8List request, dynamic hint});
+  Future<Uint8List> exportMnemonicPhrase({required Uint8List request, dynamic hint});
 
   FlutterRustBridgeTaskConstMeta get kExportMnemonicPhraseConstMeta;
 }
 
 class MystikoLibBridgeImpl implements MystikoLibBridge {
   final MystikoLibBridgePlatform _platform;
-  factory MystikoLibBridgeImpl(ExternalLibrary dylib) =>
-      MystikoLibBridgeImpl.raw(MystikoLibBridgePlatform(dylib));
+  factory MystikoLibBridgeImpl(ExternalLibrary dylib) => MystikoLibBridgeImpl.raw(MystikoLibBridgePlatform(dylib));
 
   /// Only valid on web/WASM platforms.
-  factory MystikoLibBridgeImpl.wasm(FutureOr<WasmModule> module) =>
-      MystikoLibBridgeImpl(module as ExternalLibrary);
+  factory MystikoLibBridgeImpl.wasm(FutureOr<WasmModule> module) => MystikoLibBridgeImpl(module as ExternalLibrary);
   MystikoLibBridgeImpl.raw(this._platform);
   Future<Uint8List> initialize({required Uint8List options, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(options);
@@ -414,15 +379,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kInitializeConstMeta,
-      argValues: [options],
+      argValues: [
+        options
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kInitializeConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kInitializeConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "initialize",
-        argNames: ["options"],
+        argNames: [
+          "options"
+        ],
       );
 
   Future<bool> isInitialized({dynamic hint}) {
@@ -436,8 +404,7 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kIsInitializedConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kIsInitializedConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "is_initialized",
         argNames: [],
       );
@@ -453,8 +420,7 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kDestroyConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kDestroyConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "destroy",
         argNames: [],
       );
@@ -470,30 +436,30 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kGetConfigConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kGetConfigConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "get_config",
         argNames: [],
       );
 
-  Future<Uint8List> findDefaultCircuit(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> findDefaultCircuit({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_find_default_circuit(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_find_default_circuit(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindDefaultCircuitConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindDefaultCircuitConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindDefaultCircuitConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_default_circuit",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> findCircuit({required Uint8List request, dynamic hint}) {
@@ -503,15 +469,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindCircuitConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindCircuitConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindCircuitConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_circuit",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> findChain({required Uint8List request, dynamic hint}) {
@@ -521,15 +490,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindChainConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindChainConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindChainConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_chain",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> findPeerChains({required Uint8List request, dynamic hint}) {
@@ -539,34 +511,39 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindPeerChainsConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindPeerChainsConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindPeerChainsConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_peer_chains",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> findAssetSymbols(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> findAssetSymbols({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
       callFfi: (port_) => _platform.inner.wire_find_asset_symbols(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindAssetSymbolsConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindAssetSymbolsConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindAssetSymbolsConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_asset_symbols",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> findBridge({required Uint8List request, dynamic hint}) {
@@ -576,15 +553,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindBridgeConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindBridgeConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindBridgeConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_bridge",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> findBridges({required Uint8List request, dynamic hint}) {
@@ -594,152 +574,165 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindBridgesConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindBridgesConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindBridgesConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_bridges",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> findDepositContract(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> findDepositContract({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_find_deposit_contract(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_find_deposit_contract(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindDepositContractConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindDepositContractConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindDepositContractConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_deposit_contract",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> findDepositContractByAddress(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> findDepositContractByAddress({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_find_deposit_contract_by_address(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_find_deposit_contract_by_address(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindDepositContractByAddressConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindDepositContractByAddressConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindDepositContractByAddressConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_deposit_contract_by_address",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> findPoolContract(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> findPoolContract({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
       callFfi: (port_) => _platform.inner.wire_find_pool_contract(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindPoolContractConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindPoolContractConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindPoolContractConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_pool_contract",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> findPoolContracts(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> findPoolContracts({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
       callFfi: (port_) => _platform.inner.wire_find_pool_contracts(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindPoolContractsConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindPoolContractsConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindPoolContractsConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_pool_contracts",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> findPoolContractByAddress(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> findPoolContractByAddress({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_find_pool_contract_by_address(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_find_pool_contract_by_address(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindPoolContractByAddressConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindPoolContractByAddressConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindPoolContractByAddressConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_pool_contract_by_address",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> findContractByAddress(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> findContractByAddress({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_find_contract_by_address(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_find_contract_by_address(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindContractByAddressConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindContractByAddressConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindContractByAddressConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_contract_by_address",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> getTransactionUrl(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> getTransactionUrl({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
       callFfi: (port_) => _platform.inner.wire_get_transaction_url(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kGetTransactionUrlConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kGetTransactionUrlConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kGetTransactionUrlConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "get_transaction_url",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> createAccount({required Uint8List request, dynamic hint}) {
@@ -749,15 +742,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kCreateAccountConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kCreateAccountConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kCreateAccountConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "create_account",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> count({required Uint8List request, dynamic hint}) {
@@ -767,15 +763,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kCountConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kCountConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kCountConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "count",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> countAll({dynamic hint}) {
@@ -789,8 +788,7 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kCountAllConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kCountAllConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "count_all",
         argNames: [],
       );
@@ -802,15 +800,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> findById({required Uint8List request, dynamic hint}) {
@@ -820,54 +821,60 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindByIdConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindByIdConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindByIdConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_by_id",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> findByShieldedAddress(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> findByShieldedAddress({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_find_by_shielded_address(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_find_by_shielded_address(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindByShieldedAddressConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindByShieldedAddressConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindByShieldedAddressConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_by_shielded_address",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> findByPublicKey(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> findByPublicKey({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
       callFfi: (port_) => _platform.inner.wire_find_by_public_key(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindByPublicKeyConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindByPublicKeyConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindByPublicKeyConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_by_public_key",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> updateById({required Uint8List request, dynamic hint}) {
@@ -877,135 +884,144 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kUpdateByIdConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kUpdateByIdConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kUpdateByIdConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "update_by_id",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> updateByShieldedAddress(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> updateByShieldedAddress({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_update_by_shielded_address(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_update_by_shielded_address(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kUpdateByShieldedAddressConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kUpdateByShieldedAddressConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kUpdateByShieldedAddressConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "update_by_shielded_address",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> updateByPublicKey(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> updateByPublicKey({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_update_by_public_key(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_update_by_public_key(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kUpdateByPublicKeyConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kUpdateByPublicKeyConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kUpdateByPublicKeyConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "update_by_public_key",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> updateEncryption(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> updateEncryption({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
       callFfi: (port_) => _platform.inner.wire_update_encryption(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kUpdateEncryptionConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kUpdateEncryptionConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kUpdateEncryptionConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "update_encryption",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> exportSecretKeyById(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> exportSecretKeyById({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_export_secret_key_by_id(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_export_secret_key_by_id(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kExportSecretKeyByIdConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kExportSecretKeyByIdConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kExportSecretKeyByIdConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "export_secret_key_by_id",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> exportSecretKeyByShieldedAddress(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> exportSecretKeyByShieldedAddress({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) => _platform.inner
-          .wire_export_secret_key_by_shielded_address(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_export_secret_key_by_shielded_address(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kExportSecretKeyByShieldedAddressConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta
-      get kExportSecretKeyByShieldedAddressConstMeta =>
-          const FlutterRustBridgeTaskConstMeta(
-            debugName: "export_secret_key_by_shielded_address",
-            argNames: ["request"],
-          );
+  FlutterRustBridgeTaskConstMeta get kExportSecretKeyByShieldedAddressConstMeta => const FlutterRustBridgeTaskConstMeta(
+        debugName: "export_secret_key_by_shielded_address",
+        argNames: [
+          "request"
+        ],
+      );
 
-  Future<Uint8List> exportSecretKeyByPublicKey(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> exportSecretKeyByPublicKey({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_export_secret_key_by_public_key(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_export_secret_key_by_public_key(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kExportSecretKeyByPublicKeyConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kExportSecretKeyByPublicKeyConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kExportSecretKeyByPublicKeyConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "export_secret_key_by_public_key",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> quoteDeposit({required Uint8List request, dynamic hint}) {
@@ -1015,15 +1031,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kQuoteDepositConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kQuoteDepositConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kQuoteDepositConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "quote_deposit",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> summaryDeposit({required Uint8List request, dynamic hint}) {
@@ -1033,15 +1052,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kSummaryDepositConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kSummaryDepositConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kSummaryDepositConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "summary_deposit",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> createDeposit({required Uint8List request, dynamic hint}) {
@@ -1051,15 +1073,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kCreateDepositConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kCreateDepositConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kCreateDepositConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "create_deposit",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> sendDeposit({required Uint8List request, dynamic hint}) {
@@ -1069,35 +1094,39 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kSendDepositConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kSendDepositConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kSendDepositConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "send_deposit",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> sendDepositWithGrpc(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> sendDepositWithGrpc({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_send_deposit_with_grpc(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_send_deposit_with_grpc(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kSendDepositWithGrpcConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kSendDepositWithGrpcConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kSendDepositWithGrpcConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "send_deposit_with_grpc",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> findDeposit({required Uint8List request, dynamic hint}) {
@@ -1107,15 +1136,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindDepositConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindDepositConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindDepositConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_deposit",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> findAllDeposit({dynamic hint}) {
@@ -1129,8 +1161,7 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindAllDepositConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindAllDepositConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_all_deposit",
         argNames: [],
       );
@@ -1142,34 +1173,39 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindOneDepositConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindOneDepositConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindOneDepositConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_one_deposit",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> depositFindById(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> depositFindById({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
       callFfi: (port_) => _platform.inner.wire_deposit_find_by_id(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kDepositFindByIdConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kDepositFindByIdConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kDepositFindByIdConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "deposit_find_by_id",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> countDeposit({required Uint8List request, dynamic hint}) {
@@ -1179,15 +1215,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kCountDepositConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kCountDepositConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kCountDepositConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "count_deposit",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> countAllDeposit({dynamic hint}) {
@@ -1201,8 +1240,7 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kCountAllDepositConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kCountAllDepositConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "count_all_deposit",
         argNames: [],
       );
@@ -1214,74 +1252,81 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kDepositUpdateConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kDepositUpdateConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kDepositUpdateConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "deposit_update",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> depositUpdateBatch(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> depositUpdateBatch({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_deposit_update_batch(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_deposit_update_batch(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kDepositUpdateBatchConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kDepositUpdateBatchConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kDepositUpdateBatchConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "deposit_update_batch",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> depositUpdateByFilter(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> depositUpdateByFilter({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_deposit_update_by_filter(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_deposit_update_by_filter(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kDepositUpdateByFilterConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kDepositUpdateByFilterConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kDepositUpdateByFilterConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "deposit_update_by_filter",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> depositUpdateAll(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> depositUpdateAll({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
       callFfi: (port_) => _platform.inner.wire_deposit_update_all(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kDepositUpdateAllConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kDepositUpdateAllConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kDepositUpdateAllConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "deposit_update_all",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> depositDelete({required Uint8List request, dynamic hint}) {
@@ -1291,55 +1336,60 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kDepositDeleteConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kDepositDeleteConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kDepositDeleteConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "deposit_delete",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> depositDeleteBatch(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> depositDeleteBatch({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_deposit_delete_batch(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_deposit_delete_batch(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kDepositDeleteBatchConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kDepositDeleteBatchConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kDepositDeleteBatchConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "deposit_delete_batch",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> depositDeleteByFilter(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> depositDeleteByFilter({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_deposit_delete_by_filter(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_deposit_delete_by_filter(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kDepositDeleteByFilterConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kDepositDeleteByFilterConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kDepositDeleteByFilterConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "deposit_delete_by_filter",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> depositDeleteAll({dynamic hint}) {
@@ -1353,8 +1403,7 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kDepositDeleteAllConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kDepositDeleteAllConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "deposit_delete_all",
         argNames: [],
       );
@@ -1366,15 +1415,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kScannerScanConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kScannerScanConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kScannerScanConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "scanner_scan",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> scannerReset({required Uint8List request, dynamic hint}) {
@@ -1384,15 +1436,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kScannerResetConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kScannerResetConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kScannerResetConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "scanner_reset",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> balance({required Uint8List request, dynamic hint}) {
@@ -1402,15 +1457,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kBalanceConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kBalanceConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kBalanceConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "balance",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> assets({required Uint8List request, dynamic hint}) {
@@ -1420,15 +1478,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kAssetsConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kAssetsConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kAssetsConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "assets",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> chainAssets({required Uint8List request, dynamic hint}) {
@@ -1438,15 +1499,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kChainAssetsConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kChainAssetsConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kChainAssetsConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "chain_assets",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> quoteSpend({required Uint8List request, dynamic hint}) {
@@ -1456,15 +1520,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kQuoteSpendConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kQuoteSpendConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kQuoteSpendConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "quote_spend",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> summarySpend({required Uint8List request, dynamic hint}) {
@@ -1474,15 +1541,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kSummarySpendConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kSummarySpendConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kSummarySpendConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "summary_spend",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> createSpend({required Uint8List request, dynamic hint}) {
@@ -1492,15 +1562,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kCreateSpendConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kCreateSpendConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kCreateSpendConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "create_spend",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> sendSpend({required Uint8List request, dynamic hint}) {
@@ -1510,35 +1583,39 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kSendSpendConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kSendSpendConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kSendSpendConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "send_spend",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> sendSpendWithGrpc(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> sendSpendWithGrpc({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_send_spend_with_grpc(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_send_spend_with_grpc(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kSendSpendWithGrpcConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kSendSpendWithGrpcConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kSendSpendWithGrpcConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "send_spend_with_grpc",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> findSpend({required Uint8List request, dynamic hint}) {
@@ -1548,15 +1625,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindSpendConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindSpendConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindSpendConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_spend",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> findAllSpend({dynamic hint}) {
@@ -1570,8 +1650,7 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindAllSpendConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindAllSpendConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_all_spend",
         argNames: [],
       );
@@ -1583,15 +1662,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kFindOneSpendConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kFindOneSpendConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kFindOneSpendConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "find_one_spend",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> spendFindById({required Uint8List request, dynamic hint}) {
@@ -1601,15 +1683,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kSpendFindByIdConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kSpendFindByIdConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kSpendFindByIdConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "spend_find_by_id",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> countSpend({required Uint8List request, dynamic hint}) {
@@ -1619,15 +1704,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kCountSpendConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kCountSpendConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kCountSpendConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "count_spend",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> countAllSpend({dynamic hint}) {
@@ -1641,8 +1729,7 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kCountAllSpendConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kCountAllSpendConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "count_all_spend",
         argNames: [],
       );
@@ -1654,54 +1741,60 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kSpendUpdateConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kSpendUpdateConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kSpendUpdateConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "spend_update",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> spendUpdateBatch(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> spendUpdateBatch({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
       callFfi: (port_) => _platform.inner.wire_spend_update_batch(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kSpendUpdateBatchConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kSpendUpdateBatchConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kSpendUpdateBatchConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "spend_update_batch",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> spendUpdateByFilter(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> spendUpdateByFilter({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_spend_update_by_filter(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_spend_update_by_filter(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kSpendUpdateByFilterConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kSpendUpdateByFilterConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kSpendUpdateByFilterConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "spend_update_by_filter",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> spendUpdateAll({required Uint8List request, dynamic hint}) {
@@ -1711,15 +1804,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kSpendUpdateAllConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kSpendUpdateAllConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kSpendUpdateAllConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "spend_update_all",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> spendDelete({required Uint8List request, dynamic hint}) {
@@ -1729,54 +1825,60 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kSpendDeleteConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kSpendDeleteConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kSpendDeleteConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "spend_delete",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> spendDeleteBatch(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> spendDeleteBatch({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
       callFfi: (port_) => _platform.inner.wire_spend_delete_batch(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kSpendDeleteBatchConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kSpendDeleteBatchConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kSpendDeleteBatchConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "spend_delete_batch",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> spendDeleteByFilter(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> spendDeleteByFilter({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_spend_delete_by_filter(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_spend_delete_by_filter(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kSpendDeleteByFilterConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kSpendDeleteByFilterConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kSpendDeleteByFilterConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "spend_delete_by_filter",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> spendDeleteAll({dynamic hint}) {
@@ -1790,49 +1892,51 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kSpendDeleteAllConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kSpendDeleteAllConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "spend_delete_all",
         argNames: [],
       );
 
-  Future<Uint8List> chainSyncedBlock(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> chainSyncedBlock({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
       callFfi: (port_) => _platform.inner.wire_chain_synced_block(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kChainSyncedBlockConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kChainSyncedBlockConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kChainSyncedBlockConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "chain_synced_block",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> contractSyncedBlock(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> contractSyncedBlock({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_contract_synced_block(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_contract_synced_block(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kContractSyncedBlockConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kContractSyncedBlockConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kContractSyncedBlockConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "contract_synced_block",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> status({required Uint8List request, dynamic hint}) {
@@ -1842,53 +1946,60 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kStatusConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kStatusConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kStatusConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "status",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> synchronizerSync(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> synchronizerSync({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
       callFfi: (port_) => _platform.inner.wire_synchronizer_sync(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kSynchronizerSyncConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kSynchronizerSyncConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kSynchronizerSyncConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "synchronizer_sync",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> synchronizerReset(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> synchronizerReset({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
       callFfi: (port_) => _platform.inner.wire_synchronizer_reset(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kSynchronizerResetConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kSynchronizerResetConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kSynchronizerResetConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "synchronizer_reset",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> createWallet({required Uint8List request, dynamic hint}) {
@@ -1898,15 +2009,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kCreateWalletConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kCreateWalletConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kCreateWalletConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "create_wallet",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> checkCurrent({dynamic hint}) {
@@ -1920,8 +2034,7 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kCheckCurrentConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kCheckCurrentConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "check_current",
         argNames: [],
       );
@@ -1933,15 +2046,18 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kCheckPasswordConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kCheckPasswordConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kCheckPasswordConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "check_password",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   Future<Uint8List> updatePassword({required Uint8List request, dynamic hint}) {
@@ -1951,35 +2067,39 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kUpdatePasswordConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kUpdatePasswordConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kUpdatePasswordConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "update_password",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
-  Future<Uint8List> exportMnemonicPhrase(
-      {required Uint8List request, dynamic hint}) {
+  Future<Uint8List> exportMnemonicPhrase({required Uint8List request, dynamic hint}) {
     var arg0 = _platform.api2wire_uint_8_list(request);
     return _platform.executeNormal(FlutterRustBridgeTask(
-      callFfi: (port_) =>
-          _platform.inner.wire_export_mnemonic_phrase(port_, arg0),
+      callFfi: (port_) => _platform.inner.wire_export_mnemonic_phrase(port_, arg0),
       parseSuccessData: _wire2api_uint_8_list,
       parseErrorData: null,
       constMeta: kExportMnemonicPhraseConstMeta,
-      argValues: [request],
+      argValues: [
+        request
+      ],
       hint: hint,
     ));
   }
 
-  FlutterRustBridgeTaskConstMeta get kExportMnemonicPhraseConstMeta =>
-      const FlutterRustBridgeTaskConstMeta(
+  FlutterRustBridgeTaskConstMeta get kExportMnemonicPhraseConstMeta => const FlutterRustBridgeTaskConstMeta(
         debugName: "export_mnemonic_phrase",
-        argNames: ["request"],
+        argNames: [
+          "request"
+        ],
       );
 
   void dispose() {
