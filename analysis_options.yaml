@@ -3,6 +3,7 @@ analyzer:
   exclude:
     - '**.freezed.dart'
     - '**.g.dart'
+    - '**/bridge_generated.*dart'
   language:
     strict-inference: true
     strict-raw-types: true

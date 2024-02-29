@@ -4,17 +4,75 @@ packages:
   - packages/**
 
 scripts:
-  analyze:
-    exec: flutter analyze .
-    description: Analyze a specific package in this project.
+  quality-check:
+    run: |
+      melos run clean:deep && \
+      melos clean && \
+      melos bs && \
+      melos run cargo:quality-check && \
+      melos run dart:quality-check && \
+      melos run flutter:quality-check
+    description: Run all targets generally expected in CI for a full local quality check.
 
-  check-format:
-    exec: dart format --set-exit-if-changed .
-    description: Check the format of a specific package in this project.
+  clean:deep:
+    run: git clean -x -d -f -q
+    description: Clean things very deeply, can be used to establish "pristine checkout" status.
 
-  format:
+  cargo:quality-check:
+    run: |
+      melos run cargo:build && \
+      melos run cargo:fmt && \
+      melos run cargo:fmt-check && \
+      melos run cargo:clippy && \
+      melos run cargo:test
+    description: Run Rust targets generally expected in CI for a full local quality check.
+  cargo:build:
+    run: cargo build -r
+    description: Cargo Build rust module.
+  cargo:fmt:
+    run: cargo fmt --all
+    description: Cargo Format rust module.
+  cargo:fmt-check:
+    run: cargo fmt --all -- --check
+    description: Cargo Format Check rust module.
+  cargo:clippy:
+    run: cargo clippy --all-targets --all-features -j 4 -- -D warnings
+    description: Cargo Clippy.
+  cargo:test:
+    run: cargo test
+    description: Rust module run unit tests.
+
+  dart:quality-check:
+    run: |
+      melos run dart:format && \
+      melos run dart:check-format
+    description: Run all static analysis checks.
+  dart:format:
     exec: dart format .
     description: Format a specific package in this project.
+  dart:check-format:
+    exec: dart format --set-exit-if-changed .
+    description: Check the format of a specific package in this project.
+  dart:test:
+    run: melos exec -c 1 --fail-fast -- "dart test test"
+    description: Run Dart tests for a specific package in this project.
+    packageFilters:
+      flutter: false
+      dirExists: test
+
+  flutter:quality-check:
+    run: |
+      melos run flutter:analyze
+    description: Run all static analysis checks.
+  flutter:analyze:
+    exec: flutter analyze .
+    description: Analyze a specific package in this project.
+  flutter:test:
+    run: melos exec -c 1 --fail-fast -- "flutter test test"
+    description: Run Flutter tests for a specific package in this project.
+    packageFilters:
+      flutter: true
+      dirExists: test
 
   build:
     run: melos run build:apple && melos run build:android && melos run build:other
@@ -33,19 +91,5 @@ scripts:
     description: Build the .tar.gz for all other platforms.
 
   test:
-    run: melos run test:dart --no-select && melos run test:flutter --no-select
+    run: melos run dart:test --no-select && melos run flutter:test --no-select
     description: Run all Dart & Flutter tests in this project.
-
-  test:dart:
-    run: melos exec -c 1 --fail-fast -- "dart test test"
-    description: Run Dart tests for a specific package in this project.
-    packageFilters:
-      flutter: false
-      dirExists: test
-
-  test:flutter:
-    run: melos exec -c 1 --fail-fast -- "flutter test test"
-    description: Run Flutter tests for a specific package in this project.
-    packageFilters:
-      flutter: true
-      dirExists: test
