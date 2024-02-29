@@ -16,7 +16,7 @@ do
 done
 
 # Create XCFramework zip
-FRAMEWORK="MystikoLibBridge.xcframework"
+FRAMEWORK="mystiko_lib_bridge.xcframework"
 LIBNAME=libmystiko_lib_bridge.a
 mkdir mac-lipo ios-sim-lipo
 IOS_SIM_LIPO=ios-sim-lipo/$LIBNAME

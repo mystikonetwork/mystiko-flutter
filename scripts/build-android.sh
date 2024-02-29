@@ -28,7 +28,7 @@ cargo ndk -o $JNI_DIR \
 
 # Archive the dynamic libs
 cd $JNI_DIR || exit
-tar -czvf ../mystiko-lib-bridge-android.tar.gz *
+tar -czvf ../mystiko_lib_bridge-android.tar.gz *
 cd - || exit
 
 # Cleanup
