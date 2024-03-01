@@ -2,9 +2,9 @@ name: Build
 
 on:
   push:
-    branches: [ 'master' ]
+    branches: ['master']
   pull_request:
-    branches: [ '*' ]
+    branches: ['*']
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
           submodules: recursive
           persist-credentials: false
 
-      - name: Configure SSH
+      - name: SSH Agent
         uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: |
