@@ -18,12 +18,6 @@ jobs:
           submodules: recursive
           persist-credentials: false
 
-      - name: Setup Dart
-        uses: dart-lang/setup-dart@v1
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-
       - name: Configure SSH
         uses: webfactory/ssh-agent@v0.7.0
         with:
@@ -33,6 +27,12 @@ jobs:
             ${{ secrets.SSH_PRIVATE_KEY_MYSTIKO_PROTOS }}
             ${{ secrets.SSH_PRIVATE_KEY_MYSTIKO_PROTOCOL }}
             ${{ secrets.SSH_PRIVATE_KEY_MYSTIKO_PROTOS_DART }}
+
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
 
       - name: Setup Melos
         uses: bluefireteam/melos-action@v1
@@ -49,20 +49,3 @@ jobs:
 
       - name: Check Dirty Files
         run: git diff --quiet || (echo "some generated files are not included in repo" && exit 1)
-
-      - name: Telegram Failure Notification
-        uses: appleboy/telegram-action@master
-        if: failure()
-        with:
-          message: ❗ Build failed for [${{ github.repository }}](https://github.com/${{ github.repository }}/actions) because of ${{ github.actor }}
-          format: markdown
-          to: ${{ secrets.TELEGRAM_CHAT_ID }}
-          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-      - name: Telegram Success Notification
-        uses: appleboy/telegram-action@master
-        if: success()
-        with:
-          message: Build succeeded for [${{ github.repository }}](https://github.com/${{ github.repository }}/actions)
-          format: markdown
-          to: ${{ secrets.TELEGRAM_CHAT_ID }}
-          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
