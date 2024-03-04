@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  push:
+    branches: ['master']
+  pull_request:
+    branches: ['*']
+
+jobs:
+  # -------------------------- build for windows and linux --------------------------
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PACKAGES_TOKEN }}
+          lfs: true
+          submodules: recursive
+          persist-credentials: false
+
+      - name: Configure SSH
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: |
+            ${{ secrets.SSH_PRIVATE_KEY_MYSTIKO_RUST }}
+            ${{ secrets.SSH_PRIVATE_KEY_MYSTIKO_CIRCUITS }}
+            ${{ secrets.SSH_PRIVATE_KEY_MYSTIKO_PROTOS }}
+            ${{ secrets.SSH_PRIVATE_KEY_MYSTIKO_PROTOCOL }}
+            ${{ secrets.SSH_PRIVATE_KEY_MYSTIKO_PROTOS_DART }}
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: 1.75.0
+          components: rustfmt, clippy, llvm-tools-preview
+
+      - name: Run Build Other Scripts
+        run: ./scripts/build-other.sh
