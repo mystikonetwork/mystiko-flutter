@@ -1,5 +1,0 @@
-rust_input: "src/api.rs"
-dart_output: "../lib/src/bridge_generated.dart"
-c_output: "../../mystiko_flutter/ios/Classes/frb.h"
-duplicated_c_output:
-  - "../../mystiko_flutter/macos/Classes/"

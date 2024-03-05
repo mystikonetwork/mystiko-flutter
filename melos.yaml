@@ -18,6 +18,13 @@ scripts:
     run: git clean -x -d -f -q
     description: Clean things very deeply, can be used to establish "pristine checkout" status.
 
+  bridge-codegen:
+    run: |
+      flutter_rust_bridge_codegen .flutter_rust_bridge.yaml && \
+      melos run cargo:fmt && \
+      melos run dart:format
+    description: Generate flutter_rust_bridge code.
+
   cargo:quality-check:
     run: |
       melos run cargo:build && \

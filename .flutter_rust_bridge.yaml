@@ -1,0 +1,11 @@
+dart_format_line_length: 100
+rust_input:
+  - "packages/mystiko_dart/native/src/api.rs"
+dart_output:
+  - "packages/mystiko_dart/lib/src/bridge_generated.dart"
+c_output:
+  - "packages/mystiko_flutter/ios/Classes/frb.h"
+extra_c_output_path:
+  - "packages/mystiko_flutter/macos/Classes/"
+inline_rust: true
+wasm: true
