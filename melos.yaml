@@ -9,6 +9,7 @@ scripts:
       melos run clean:deep && \
       melos clean && \
       melos bs && \
+      melos run bridge-codegen && \
       melos run cargo:quality-check && \
       melos run dart:quality-check && \
       melos run flutter:quality-check

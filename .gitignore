@@ -31,3 +31,4 @@ build/
 target
 /platform-build
 /Cargo.lock
+logs
