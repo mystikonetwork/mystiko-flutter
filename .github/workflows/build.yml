@@ -48,6 +48,14 @@ jobs:
           toolchain: 1.75.0
           components: rustfmt, clippy, llvm-tools-preview
 
+      - name: Install cargo-expand
+        run: |
+          cargo install cargo-expand
+
+      - name: Install flutter rust bridge codegen
+        run: |
+          cargo install flutter_rust_bridge_codegen
+
       - name: Run melos quality-check
         run: |
           melos run quality-check

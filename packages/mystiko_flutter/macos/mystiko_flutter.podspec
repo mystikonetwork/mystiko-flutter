@@ -1,8 +1,8 @@
-release_tag_name = 'mystiko_lib_bridge-v0.1.0' # generated; do not edit
+release_tag_name = 'mystiko_flutter-v0.1.0' # generated; do not edit
 
 # We cannot distribute the XCFramework alongside the library directly,
 # so we have to fetch the correct version here.
-framework_name = 'MystikoLibBridge.xcframework'
+framework_name = 'mystiko_lib_bridge.xcframework'
 remote_zip_name = "#{framework_name}.zip"
 url = "https://github.com/mystikonetwork/mystiko-flutter/releases/download/#{release_tag_name}/#{remote_zip_name}"
 local_zip_name = "#{framework_name}.zip"
@@ -23,8 +23,8 @@ Pod::Spec.new do |spec|
   spec.name          = 'mystiko_flutter'
   spec.version       = '0.0.1'
   spec.license       = { :file => '../LICENSE' }
-  spec.homepage      = 'https://github.com/YourGitHubAccount/repo_name'
-  spec.authors       = { 'Your Name' => 'your-email@example.com' }
+  spec.homepage      = 'https://github.com/mystikonetwork/mystiko-flutter'
+  spec.authors       = { 'MystikoNetwork' => 'your-email@example.com' }
   spec.summary       = 'iOS/macOS Flutter bindings for library_name'
 
   spec.source              = { :path => '.' }

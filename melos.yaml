@@ -3,12 +3,18 @@ name: mystiko_flutter
 packages:
   - packages/**
 
+command:
+  version:
+    hooks:
+      preCommit: bash scripts/version.sh
+
 scripts:
   quality-check:
     run: |
       melos run clean:deep && \
       melos clean && \
       melos bs && \
+      melos run bridge-codegen && \
       melos run cargo:quality-check && \
       melos run dart:quality-check && \
       melos run flutter:quality-check
@@ -17,6 +23,13 @@ scripts:
   clean:deep:
     run: git clean -x -d -f -q
     description: Clean things very deeply, can be used to establish "pristine checkout" status.
+
+  bridge-codegen:
+    run: |
+      flutter_rust_bridge_codegen .flutter_rust_bridge.yaml && \
+      melos run cargo:fmt && \
+      melos run dart:format
+    description: Generate flutter_rust_bridge code.
 
   cargo:quality-check:
     run: |

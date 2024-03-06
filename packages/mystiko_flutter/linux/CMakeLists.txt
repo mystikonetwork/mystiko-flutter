@@ -1,3 +1,5 @@
+set(MystikoFlutterVersion "mystiko_flutter-v0.1.0") # generated; do not edit
+
 # The Flutter tooling requires that developers have CMake 3.10 or later
 # installed. You should not increase this version, as doing so will cause
 # the plugin to fail to compile for some customers of the plugin.
@@ -7,16 +9,29 @@ cmake_minimum_required(VERSION 3.10)
 set(PROJECT_NAME "mystiko_flutter")
 project(${PROJECT_NAME} LANGUAGES CXX)
 
-# Invoke the build for native code shared with the other target platforms.
-# This can be changed to accommodate different builds.
-add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/../src" "${CMAKE_CURRENT_BINARY_DIR}/shared")
+# Download the binaries if they are not already present.
+set(MystikoLibBridgeLibRoot "${CMAKE_CURRENT_SOURCE_DIR}/${MystikoFlutterVersion}")
+set(MystikoLibBridgeArchivePath "${MystikoLibBridgeLibRoot}.tar.gz")
+if(NOT EXISTS ${MystikoLibBridgeArchivePath})
+  file(DOWNLOAD
+    "https://github.com/mystikonetwork/mystiko-flutter/releases/download/${MystikoFlutterVersion}/mystiko_lib_bridge-other.tar.gz"
+    ${MystikoLibBridgeArchivePath}
+    TLS_VERIFY ON
+  )
+endif()
+
+# Extract the binaries, overriding any already present.
+file(REMOVE_RECURSE ${MystikoLibBridgeLibRoot})
+file(MAKE_DIRECTORY ${MystikoLibBridgeLibRoot})
+execute_process(
+  COMMAND ${CMAKE_COMMAND} -E tar xzf ${MystikoLibBridgeArchivePath}
+  WORKING_DIRECTORY ${MystikoLibBridgeLibRoot}
+)
 
 # List of absolute paths to libraries that should be bundled with the plugin.
 # This list could contain prebuilt libraries, or libraries created by an
 # external build triggered from this build file.
 set(mystiko_flutter_bundled_libraries
-  # Defined in ../src/CMakeLists.txt.
-  # This can be changed to accommodate different builds.
-  $<TARGET_FILE:mystiko_flutter>
+  "${MystikoLibBridgeLibRoot}/${FLUTTER_TARGET_PLATFORM}/libmystiko_lib_bridge.so"
   PARENT_SCOPE
 )
