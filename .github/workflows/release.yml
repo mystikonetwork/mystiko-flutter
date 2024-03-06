@@ -2,14 +2,15 @@ name: Release
 
 on:
   push:
-    branches: ['master']
-  pull_request:
-    branches: ['*']
+    tags:
+      - 'v*.*.*'
 
 jobs:
   # -------------------------- build for macos and ios --------------------------
   build-macos-ios:
     runs-on: macos-latest
+    outputs:
+      result: ${{ job.status }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -33,10 +34,18 @@ jobs:
           toolchain: 1.75.0
       - name: Run Build MacOS(IOS) Scripts
         run: ./scripts/build-apple.sh
-
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          draft: true
+          files: |
+            platform-build/mystiko_lib_bridge.xcframework.zip
   # -------------------------- build for windows and linux --------------------------
   build-android:
     runs-on: ubuntu-latest
+    outputs:
+      result: ${{ job.status }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -60,9 +69,18 @@ jobs:
           toolchain: 1.75.0
       - name: Run Build Android Scripts
         run: ./scripts/build-android.sh
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          draft: true
+          files: |
+            platform-build/mystiko_lib_bridge-android.tar.gz
   # -------------------------- build for windows and linux --------------------------
   build-others:
     runs-on: ubuntu-latest
+    outputs:
+      result: ${{ job.status }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -88,3 +106,38 @@ jobs:
         run: cargo install cross --git https://github.com/cross-rs/cross
       - name: Run Build Other Scripts
         run: ./scripts/build-other.sh
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          draft: true
+          files: |
+            platform-build/mystiko_lib_bridge-other.tar.gz
+  # -------------------------- Telegram Notification --------------------------
+  telegram-notification:
+    runs-on: ubuntu-latest
+    needs: [build-macos-ios, build-android, build-others]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PACKAGES_TOKEN }}
+          lfs: true
+          submodules: recursive
+          persist-credentials: false
+      - name: Telegram Failure Notification
+        uses: appleboy/telegram-action@master
+        if: ${{ needs.build-macos-ios.outputs.result == 'failure' || needs.build-android.outputs.result == 'failure' || needs.build-others.outputs.result == 'failure' }}
+        with:
+          message: ❗ Release failed for [${{ github.repository }}](https://github.com/${{ github.repository }}/actions) because of ${{ github.actor }}
+          format: markdown
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      - name: Telegram Success Notification
+        uses: appleboy/telegram-action@master
+        if: ${{ needs.build-macos-ios.outputs.result == 'success' && needs.build-android.outputs.result == 'success' && needs.build-others.outputs.result == 'success' }}
+        with:
+          message: Release succeeded for [${{ github.repository }}](https://github.com/${{ github.repository }}/actions)
+          format: markdown
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
