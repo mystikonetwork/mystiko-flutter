@@ -3,6 +3,11 @@ name: mystiko_flutter
 packages:
   - packages/**
 
+command:
+  version:
+    hooks:
+      preCommit: bash scripts/version.sh
+
 scripts:
   quality-check:
     run: |
