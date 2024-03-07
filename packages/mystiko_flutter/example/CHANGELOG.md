@@ -2,6 +2,3 @@
 
  - The first version of the flutter plug-in package
 
-## 0.0.1
-
-* TODO: Describe initial release.
