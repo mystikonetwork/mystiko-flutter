@@ -1,4 +1,4 @@
-set(MystikoFlutterVersion "mystiko_flutter-v0.0.1") # generated; do not edit
+set(MystikoFlutterVersion "v0.0.1") # generated; do not edit
 
 # TODO Remove this workaround once Flutter supports Windows ARM.
 # https://github.com/flutter/flutter/issues/116196
