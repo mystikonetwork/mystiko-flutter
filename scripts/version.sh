@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CURR_VERSION=mystiko_flutter-v`awk '/^version: /{print $2}' packages/mystiko_dart/pubspec.yaml`
+CURR_VERSION=v`awk '/^version: /{print $2}' packages/mystiko_dart/pubspec.yaml`
 
 # IOS & macOS
 APPLE_HEADER="release_tag_name = '$CURR_VERSION' # generated; do not edit"
