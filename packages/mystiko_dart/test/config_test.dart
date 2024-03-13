@@ -19,7 +19,7 @@ Future<void> main() async {
     api = await Mystiko.getMystikoConfigApi(createLibrary());
     await mystikoApi.initialize(MystikoOptions(
         configOptions:
-        ConfigOptions(filePath: configPath('full.json'), isTestnet: true)));
+            ConfigOptions(filePath: configPath('full.json'), isTestnet: true)));
   });
 
   tearDownAll(() async {

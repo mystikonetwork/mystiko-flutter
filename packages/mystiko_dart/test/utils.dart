@@ -50,7 +50,7 @@ TransactionServiceClient createGrpcClient(int port) {
   final channel = ClientChannel('127.0.0.1',
       port: port,
       options:
-      const ChannelOptions(credentials: ChannelCredentials.insecure()));
+          const ChannelOptions(credentials: ChannelCredentials.insecure()));
   return TransactionServiceClient(channel,
       options: CallOptions(timeout: const Duration(seconds: 30)));
 }

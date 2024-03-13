@@ -43,7 +43,7 @@ Future<void> main() async {
     TransactionServiceClient client = createGrpcClient(port);
     // send transaction
     SendTransactionResponse response =
-    await client.sendTransaction(SendTransactionRequest());
+        await client.sendTransaction(SendTransactionRequest());
     expect(response, await sendTransaction(SendTransactionRequest()));
   });
 }

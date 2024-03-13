@@ -22,11 +22,12 @@ Future<void> main() async {
     walletApi = await Mystiko.getMystikoWalletApi(createLibrary());
     await mystikoApi.initialize(MystikoOptions(
         configOptions:
-        ConfigOptions(filePath: configPath('full.json'), isTestnet: true)));
+            ConfigOptions(filePath: configPath('full.json'), isTestnet: true)));
   });
 
   setUp(() async {
-    await walletApi.create(CreateWalletOptions(password: defaultWalletPassword));
+    await walletApi
+        .create(CreateWalletOptions(password: defaultWalletPassword));
   });
 
   tearDownAll(() async {
@@ -50,70 +51,70 @@ Future<void> main() async {
     Account? account = response_0.data;
     // find all
     Response<List<Account>, AccountError> response_1 =
-    await accountApi.findAll();
+        await accountApi.findAll();
     expect(response_1.data?[0], account);
   });
 
   test('find by id', () async {
     CreateAccountOptions options =
-    CreateAccountOptions(walletPassword: defaultWalletPassword);
+        CreateAccountOptions(walletPassword: defaultWalletPassword);
     // create account 1
     Response<Account, AccountError> response_0 =
-    await accountApi.create(options);
+        await accountApi.create(options);
     expect(response_0.isSuccess, true);
     // create account 2
     Response<Account, AccountError> response_1 =
-    await accountApi.create(options);
+        await accountApi.create(options);
     expect(response_1.isSuccess, true);
     // find by id
     Response<Account, AccountError> response_2 =
-    await accountApi.findById(response_0.data!.id);
+        await accountApi.findById(response_0.data!.id);
     expect(response_0.data, response_2.data);
     // find by id
     Response<Account, AccountError> response_3 =
-    await accountApi.findById(response_1.data!.id);
+        await accountApi.findById(response_1.data!.id);
     expect(response_1.data, response_3.data);
     // find by non existing id
     Response<Account, AccountError> response_4 =
-    await accountApi.findById('non_existing_id');
+        await accountApi.findById('non_existing_id');
     expect(response_4.data, Account());
   });
 
   test('find by public key', () async {
     CreateAccountOptions options =
-    CreateAccountOptions(walletPassword: defaultWalletPassword);
+        CreateAccountOptions(walletPassword: defaultWalletPassword);
     // create account 1
     Response<Account, AccountError> response_0 =
-    await accountApi.create(options);
+        await accountApi.create(options);
     expect(response_0.isSuccess, true);
     // create account 2
     Response<Account, AccountError> response_1 =
-    await accountApi.create(options);
+        await accountApi.create(options);
     expect(response_1.isSuccess, true);
     // find by pk
     Response<Account, AccountError> response_2 =
-    await accountApi.findByPublicKey(response_0.data!.publicKey);
+        await accountApi.findByPublicKey(response_0.data!.publicKey);
     expect(response_0.data, response_2.data);
     // find by pk
     Response<Account, AccountError> response_3 =
-    await accountApi.findByPublicKey(response_1.data!.publicKey);
+        await accountApi.findByPublicKey(response_1.data!.publicKey);
     expect(response_1.data, response_3.data);
     // find by non existing pk
     Response<Account, AccountError> response_4 =
-    await accountApi.findByPublicKey('non_existing_public_key');
+        await accountApi.findByPublicKey('non_existing_public_key');
     expect(response_4.data, Account());
   });
 
   test('find by shielded address', () async {
     CreateAccountOptions options =
-    CreateAccountOptions(walletPassword: defaultWalletPassword);
+        CreateAccountOptions(walletPassword: defaultWalletPassword);
     // create account 1
     Response<Account, AccountError> response_0 =
-    await accountApi.create(options);
+        await accountApi.create(options);
     expect(response_0.isSuccess, true);
     // create account 2
     Response<Account, AccountError> response_1 =
-    await accountApi.create(options);
+        await accountApi.create(options);
     expect(response_1.isSuccess, true);
     // find by shielded address
     Response<Account, AccountError> response_2 = await accountApi
@@ -125,23 +126,23 @@ Future<void> main() async {
     expect(response_1.data, response_3.data);
     // find by non existing shielded address
     Response<Account, AccountError> response_4 =
-    await accountApi.findByPublicKey('non_existing_shielded_address');
+        await accountApi.findByPublicKey('non_existing_shielded_address');
     expect(response_4.data, Account());
   });
 
   test('count', () async {
     CreateAccountOptions options =
-    CreateAccountOptions(walletPassword: defaultWalletPassword);
+        CreateAccountOptions(walletPassword: defaultWalletPassword);
     // create account 1
     Response<Account, AccountError> response_0 =
-    await accountApi.create(options);
+        await accountApi.create(options);
     expect(response_0.isSuccess, true);
     // count all
     Response<Int64, AccountError> response_1 = await accountApi.countAll();
     expect(response_1.data?.toInt(), 1);
     // create account 2
     Response<Account, AccountError> response_2 =
-    await accountApi.create(options);
+        await accountApi.create(options);
     expect(response_2.isSuccess, true);
     // count all
     Response<Int64, AccountError> response_3 = await accountApi.countAll();
@@ -150,15 +151,15 @@ Future<void> main() async {
 
   test('update name', () async {
     CreateAccountOptions options =
-    CreateAccountOptions(walletPassword: defaultWalletPassword);
+        CreateAccountOptions(walletPassword: defaultWalletPassword);
     // create account 1
     Response<Account, AccountError> response_0 =
-    await accountApi.create(options);
+        await accountApi.create(options);
     expect(response_0.isSuccess, true);
 
     // update account name
     UpdateAccountOptions options_1 =
-    UpdateAccountOptions(walletPassword: defaultWalletPassword, name: "");
+        UpdateAccountOptions(walletPassword: defaultWalletPassword, name: '');
     Response<Account, AccountError> response_1 = await accountApi
         .updateByPublicKey(response_0.data!.publicKey, options_1);
     expect(response_1.data?.name, response_0.data?.name);
@@ -177,15 +178,15 @@ Future<void> main() async {
 
   test('update encryption', () async {
     CreateAccountOptions options =
-    CreateAccountOptions(walletPassword: defaultWalletPassword);
+        CreateAccountOptions(walletPassword: defaultWalletPassword);
     // create account 1
     Response<Account, AccountError> response_0 =
-    await accountApi.create(options);
+        await accountApi.create(options);
     expect(response_0.isSuccess, true);
     Account account1 = response_0.data!;
     // create account 2
     Response<Account, AccountError> response_1 =
-    await accountApi.create(options);
+        await accountApi.create(options);
     expect(response_1.isSuccess, true);
     Account account2 = response_1.data!;
 
@@ -202,16 +203,16 @@ Future<void> main() async {
     Response<Wallet, WalletError> response_4 = await walletApi.updatePassword(
         defaultWalletPassword, newWalletPassword);
     expect(response_4.isSuccess, true);
-    Response<List<Account>, AccountError> response_5 = await accountApi.updateEncryption(
-        defaultWalletPassword, newWalletPassword);
+    Response<List<Account>, AccountError> response_5 = await accountApi
+        .updateEncryption(defaultWalletPassword, newWalletPassword);
     expect(response_5.isSuccess, true);
     // sk3
     Response<String, AccountError> response_6 =
-    await accountApi.exportSecretKeyById(newWalletPassword, account1.id);
+        await accountApi.exportSecretKeyById(newWalletPassword, account1.id);
     String sk3 = response_6.data!;
     // sk4
     Response<String, AccountError> response_7 =
-    await accountApi.exportSecretKeyById(newWalletPassword, account2.id);
+        await accountApi.exportSecretKeyById(newWalletPassword, account2.id);
     String sk4 = response_7.data!;
     expect(sk1, sk3);
     expect(sk2, sk4);

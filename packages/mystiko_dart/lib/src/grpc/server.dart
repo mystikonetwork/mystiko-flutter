@@ -25,7 +25,7 @@ class GrpcServerOptions {
   final int port;
   final Future<GetAddressResponse> Function() getAddressFunc;
   final Future<SendTransactionResponse> Function(SendTransactionRequest)
-  sendTransactionFunc;
+      sendTransactionFunc;
 
   GrpcServerOptions({
     required this.port,
