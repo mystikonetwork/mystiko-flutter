@@ -62,6 +62,8 @@ void wire_find_contract_by_address(int64_t port_, struct wire_uint_8_list *reque
 
 void wire_get_transaction_url(int64_t port_, struct wire_uint_8_list *request);
 
+void wire_supported_asset_symbols(int64_t port_, struct wire_uint_8_list *request);
+
 void wire_create_account(int64_t port_, struct wire_uint_8_list *request);
 
 void wire_count(int64_t port_, struct wire_uint_8_list *request);
@@ -220,6 +222,7 @@ static int64_t dummy_method_to_enforce_bundling(void) {
     dummy_var ^= ((int64_t) (void*) wire_find_pool_contract_by_address);
     dummy_var ^= ((int64_t) (void*) wire_find_contract_by_address);
     dummy_var ^= ((int64_t) (void*) wire_get_transaction_url);
+    dummy_var ^= ((int64_t) (void*) wire_supported_asset_symbols);
     dummy_var ^= ((int64_t) (void*) wire_create_account);
     dummy_var ^= ((int64_t) (void*) wire_count);
     dummy_var ^= ((int64_t) (void*) wire_count_all);

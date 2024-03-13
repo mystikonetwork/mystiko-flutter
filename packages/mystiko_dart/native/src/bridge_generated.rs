@@ -262,6 +262,22 @@ fn wire_get_transaction_url_impl(port_: MessagePort, request: impl Wire2Api<Vec<
         },
     )
 }
+fn wire_supported_asset_symbols_impl(
+    port_: MessagePort,
+    request: impl Wire2Api<Vec<u8>> + UnwindSafe,
+) {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap::<_, _, _, Vec<u8>, _>(
+        WrapInfo {
+            debug_name: "supported_asset_symbols",
+            port: Some(port_),
+            mode: FfiCallMode::Normal,
+        },
+        move || {
+            let api_request = request.wire2api();
+            move |task_callback| Result::<_, ()>::Ok(supported_asset_symbols(api_request))
+        },
+    )
+}
 fn wire_create_account_impl(port_: MessagePort, request: impl Wire2Api<Vec<u8>> + UnwindSafe) {
     FLUTTER_RUST_BRIDGE_HANDLER.wrap::<_, _, _, Vec<u8>, _>(
         WrapInfo {
@@ -1292,6 +1308,11 @@ mod web {
     }
 
     #[wasm_bindgen]
+    pub fn wire_supported_asset_symbols(port_: MessagePort, request: Box<[u8]>) {
+        wire_supported_asset_symbols_impl(port_, request)
+    }
+
+    #[wasm_bindgen]
     pub fn wire_create_account(port_: MessagePort, request: Box<[u8]>) {
         wire_create_account_impl(port_, request)
     }
@@ -1760,6 +1781,11 @@ mod io {
     #[no_mangle]
     pub extern "C" fn wire_get_transaction_url(port_: i64, request: *mut wire_uint_8_list) {
         wire_get_transaction_url_impl(port_, request)
+    }
+
+    #[no_mangle]
+    pub extern "C" fn wire_supported_asset_symbols(port_: i64, request: *mut wire_uint_8_list) {
+        wire_supported_asset_symbols_impl(port_, request)
     }
 
     #[no_mangle]

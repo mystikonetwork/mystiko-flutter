@@ -12,12 +12,14 @@ dependencies:
   ffi: ^2.0.1
   flutter_rust_bridge: 1.82.6
   meta: ^1.8.0
+  grpc: ^3.2.4
   mystiko_protos_dart:
     git:
       url: git@github.com:mystikonetwork/mystiko-protos-dart.git
-      ref: 3db0956
+      ref: 92c5379
   fixnum: ^1.1.0
   uuid: any
+  logging: ^1.2.0
 
 dev_dependencies:
   ffigen: ^8.0.2

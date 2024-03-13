@@ -422,6 +422,23 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_get_transaction_url = _wire_get_transaction_urlPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
+  void wire_supported_asset_symbols(
+    int port_,
+    ffi.Pointer<wire_uint_8_list> request,
+  ) {
+    return _wire_supported_asset_symbols(
+      port_,
+      request,
+    );
+  }
+
+  late final _wire_supported_asset_symbolsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Int64,
+              ffi.Pointer<wire_uint_8_list>)>>('wire_supported_asset_symbols');
+  late final _wire_supported_asset_symbols = _wire_supported_asset_symbolsPtr
+      .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
+
   void wire_create_account(
     int port_,
     ffi.Pointer<wire_uint_8_list> request,

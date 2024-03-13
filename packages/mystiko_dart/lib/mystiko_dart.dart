@@ -16,5 +16,6 @@ export 'src/interface/deposit.dart';
 export 'src/interface/scanner.dart';
 export 'src/interface/spend.dart';
 export 'src/interface/synchronizer.dart';
+export 'src/interface/wallet.dart';
 
 export 'src/common/response.dart';

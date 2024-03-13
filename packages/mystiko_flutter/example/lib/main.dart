@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> initialize() async {
-    MystikoApi api = await Mysitko.mystikoApi();
+    MystikoApi api = await Mystiko.mystikoApi();
     Response<void, MystikoError> response = await api.initialize(
         MystikoOptions(configOptions: ConfigOptions(isTestnet: true)));
     log(response as String);

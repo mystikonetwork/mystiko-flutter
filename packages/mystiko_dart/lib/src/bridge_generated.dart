@@ -100,6 +100,11 @@ abstract class MystikoLibBridge {
 
   FlutterRustBridgeTaskConstMeta get kGetTransactionUrlConstMeta;
 
+  Future<Uint8List> supportedAssetSymbols(
+      {required Uint8List request, dynamic hint});
+
+  FlutterRustBridgeTaskConstMeta get kSupportedAssetSymbolsConstMeta;
+
   /// account api
   Future<Uint8List> createAccount({required Uint8List request, dynamic hint});
 
@@ -739,6 +744,26 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
   FlutterRustBridgeTaskConstMeta get kGetTransactionUrlConstMeta =>
       const FlutterRustBridgeTaskConstMeta(
         debugName: "get_transaction_url",
+        argNames: ["request"],
+      );
+
+  Future<Uint8List> supportedAssetSymbols(
+      {required Uint8List request, dynamic hint}) {
+    var arg0 = _platform.api2wire_uint_8_list(request);
+    return _platform.executeNormal(FlutterRustBridgeTask(
+      callFfi: (port_) =>
+          _platform.inner.wire_supported_asset_symbols(port_, arg0),
+      parseSuccessData: _wire2api_uint_8_list,
+      parseErrorData: null,
+      constMeta: kSupportedAssetSymbolsConstMeta,
+      argValues: [request],
+      hint: hint,
+    ));
+  }
+
+  FlutterRustBridgeTaskConstMeta get kSupportedAssetSymbolsConstMeta =>
+      const FlutterRustBridgeTaskConstMeta(
+        debugName: "supported_asset_symbols",
         argNames: ["request"],
       );
 

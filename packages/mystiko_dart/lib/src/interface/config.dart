@@ -1,6 +1,7 @@
 import 'package:fixnum/fixnum.dart' as $fixnum;
 
 import 'package:mystiko_dart/mystiko_dart.dart';
+import 'package:mystiko_protos_dart/mystiko/api/config/index.dart';
 import 'package:mystiko_protos_dart/mystiko/api/index.dart';
 import 'package:mystiko_protos_dart/mystiko/common/index.dart';
 import 'package:mystiko_protos_dart/mystiko/config/bridge/index.dart';
@@ -55,4 +56,7 @@ abstract class MystikoConfigApi {
 
   Future<Response<String, ConfigError>> getTransactionUrl(
       $fixnum.Int64 chainId, String txHash);
+
+  Future<Response<List<String>, ConfigError>>
+      supportedAssetSymbols($fixnum.Int64 chainId);
 }
