@@ -89,6 +89,9 @@ class MystikoLibBridgeWasmModule implements WasmModule {
   external dynamic /* void */ wire_get_transaction_url(
       NativePortType port_, Uint8List request);
 
+  external dynamic /* void */ wire_supported_asset_symbols(
+      NativePortType port_, Uint8List request);
+
   external dynamic /* void */ wire_create_account(
       NativePortType port_, Uint8List request);
 
@@ -344,6 +347,9 @@ class MystikoLibBridgeWire
 
   void wire_get_transaction_url(NativePortType port_, Uint8List request) =>
       wasmModule.wire_get_transaction_url(port_, request);
+
+  void wire_supported_asset_symbols(NativePortType port_, Uint8List request) =>
+      wasmModule.wire_supported_asset_symbols(port_, request);
 
   void wire_create_account(NativePortType port_, Uint8List request) =>
       wasmModule.wire_create_account(port_, request);

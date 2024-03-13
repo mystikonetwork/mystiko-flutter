@@ -196,4 +196,15 @@ class MystikoConfigImpl extends MystikoConfigApi {
     return Response.fromApiResponse(ApiResponse.fromBuffer(buffer),
         (data) => GetTransactionUrlResponse.fromBuffer(data).url);
   }
+
+  @override
+  Future<Response<List<String>, ConfigError>> supportedAssetSymbols(
+      $fixnum.Int64 chainId) async {
+    SupportedAssetSymbolsRequest request =
+        SupportedAssetSymbolsRequest(chainId: chainId);
+    Uint8List buffer =
+        await bridge.supportedAssetSymbols(request: request.writeToBuffer());
+    return Response.fromApiResponse(ApiResponse.fromBuffer(buffer),
+        (data) => SupportedAssetSymbolsResponse.fromBuffer(data).symbols);
+  }
 }

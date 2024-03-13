@@ -55,4 +55,7 @@ abstract class MystikoConfigApi {
 
   Future<Response<String, ConfigError>> getTransactionUrl(
       $fixnum.Int64 chainId, String txHash);
+
+  Future<Response<List<String>, ConfigError>> supportedAssetSymbols(
+      $fixnum.Int64 chainId);
 }

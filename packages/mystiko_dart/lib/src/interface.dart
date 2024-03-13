@@ -1,9 +1,12 @@
+import 'package:grpc/grpc.dart';
+import 'package:logging/logging.dart';
 import 'package:mystiko_dart/mystiko_dart.dart';
 
 // ignore: directives_ordering
 import 'package:mystiko_dart/src/ffi/stub.dart'
     if (dart.library.io) 'package:mystiko_dart/src/ffi/io.dart'
     if (dart.library.html) 'package:mystiko_dart/src/ffi/web.dart';
+import 'package:mystiko_dart/src/grpc/server.dart';
 import 'package:mystiko_dart/src/impl/config_impl.dart';
 import 'package:mystiko_dart/src/impl/mystiko_impl.dart';
 
@@ -12,10 +15,11 @@ import 'impl/deposit_impl.dart';
 import 'impl/scanner_impl.dart';
 import 'impl/spend_impl.dart';
 import 'impl/synchronizer_impl.dart';
+import 'impl/wallet_impl.dart';
 
 /// The exposed API to interact with mystiko
 // ignore: non_constant_identifier_names
-final Mysitko = MystikoInterface._();
+final Mystiko = MystikoInterface._();
 
 /// The interface of the API to interact with mysitko_lib_bridge
 class MystikoInterface {
@@ -23,6 +27,10 @@ class MystikoInterface {
   MystikoInterface._();
 
   MystikoLibBridge? _bridge;
+
+  late Server grpcServer;
+
+  final _logger = Logger('MystikoDart');
 
   /// Creates a MystikoApi from the given [library]
   ///
@@ -96,5 +104,31 @@ class MystikoInterface {
       ExternalLibrary library) async {
     _bridge ??= createWrapperImpl(library);
     return MystikoSynchronizerImpl(_bridge!);
+  }
+
+  /// Creates a MystikoWalletApi from the given [library]
+  ///
+  /// [library] is a WasmModule on web & a DynamicLibrary on dart:io platforms.
+  /// [library] is used to create the internal ffi object
+  /// that is used to call the Rust APIs.
+  Future<MystikoWalletApi> getMystikoWalletApi(ExternalLibrary library) async {
+    _bridge ??= createWrapperImpl(library);
+    return MystikoWalletImpl(_bridge!);
+  }
+
+  Future<void> startGrpcServer(GrpcServerOptions options) async {
+    Server server = await createGrpcServer(ServerConfig(
+        getAddressFunc: options.getAddressFunc,
+        sendTransactionFunc: options.sendTransactionFunc));
+    grpcServer = server;
+
+    // start grpc server
+    await grpcServer.serve(port: options.port);
+    _logger.info('Grpc Server listening on port ${grpcServer.port}...');
+  }
+
+  Future<void> shutdownGrpcServer() async {
+    await grpcServer.shutdown();
+    _logger.info('Grpc Server Shutdown successful');
   }
 }

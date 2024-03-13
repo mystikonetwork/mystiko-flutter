@@ -74,6 +74,10 @@ pub fn get_transaction_url(request: Vec<u8>) -> Vec<u8> {
     mystiko_lib::config::get_transaction_url(request).encode_to_vec()
 }
 
+pub fn supported_asset_symbols(request: Vec<u8>) -> Vec<u8> {
+    mystiko_lib::config::supported_asset_symbols(request).encode_to_vec()
+}
+
 /// account api
 pub fn create_account(request: Vec<u8>) -> Vec<u8> {
     mystiko_lib::account::create(request).encode_to_vec()
