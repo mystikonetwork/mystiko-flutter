@@ -46,8 +46,7 @@ dependencies:
   mystiko_protos_dart:
     git:
       url: git@github.com:mystikonetwork/mystiko-protos-dart.git
-      ref: 92c5379
-
+      ref: 0e8572d
 dev_dependencies:
   flutter_test:
     sdk: flutter
