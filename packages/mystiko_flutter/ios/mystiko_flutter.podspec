@@ -4,7 +4,7 @@ release_tag_name = 'v0.0.1' # generated; do not edit
 # so we have to fetch the correct version here.
 framework_name = 'mystiko_lib_bridge.xcframework'
 remote_zip_name = "#{framework_name}.zip"
-url = "https://github.com/mystikonetwork/mystiko-flutter/releases/download/#{release_tag_name}/#{remote_zip_name}"
+url = "https://static.mystiko.network/lib/mystiko_dart/#{release_tag_name}/#{remote_zip_name}"
 local_zip_name = "#{release_tag_name}.zip"
 `
 cd Frameworks
