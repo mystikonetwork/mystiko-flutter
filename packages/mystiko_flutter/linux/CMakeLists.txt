@@ -1,4 +1,4 @@
-set(MystikoFlutterVersion "v0.0.1") # generated; do not edit
+set(MystikoFlutterVersion "v0.0.2") # generated; do not edit
 
 # The Flutter tooling requires that developers have CMake 3.10 or later
 # installed. You should not increase this version, as doing so will cause
@@ -14,7 +14,7 @@ set(MystikoLibBridgeLibRoot "${CMAKE_CURRENT_SOURCE_DIR}/${MystikoFlutterVersion
 set(MystikoLibBridgeArchivePath "${MystikoLibBridgeLibRoot}.tar.gz")
 if(NOT EXISTS ${MystikoLibBridgeArchivePath})
   file(DOWNLOAD
-    "https://github.com/mystikonetwork/mystiko-flutter/releases/download/${MystikoFlutterVersion}/mystiko_lib_bridge-other.tar.gz"
+    "https://static.mystiko.network/lib/mystiko_dart/${MystikoFlutterVersion}/mystiko_lib_bridge-other.tar.gz"
     ${MystikoLibBridgeArchivePath}
     TLS_VERIFY ON
   )
