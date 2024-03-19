@@ -3,9 +3,6 @@ import 'dart:typed_data';
 import 'package:fixnum/fixnum.dart';
 import 'package:meta/meta.dart';
 import 'package:mystiko_dart/mystiko_dart.dart';
-import 'package:mystiko_protos_dart/mystiko/api/index.dart';
-import 'package:mystiko_protos_dart/mystiko/api/synchronizer/index.dart';
-import 'package:mystiko_protos_dart/mystiko/core/synchronizer/index.dart';
 
 @internal
 class MystikoSynchronizerImpl extends MystikoSynchronizerApi {
@@ -35,8 +32,10 @@ class MystikoSynchronizerImpl extends MystikoSynchronizerApi {
   }
 
   @override
-  Future<Response<void, SynchronizerError>> reset(ResetOptions options) async {
-    ResetRequest request = ResetRequest(options: options);
+  Future<Response<void, SynchronizerError>> reset(
+      SynchronizerResetOptions options) async {
+    SynchronizerResetRequest request =
+        SynchronizerResetRequest(options: options);
     Uint8List buffer =
         await bridge.synchronizerReset(request: request.writeToBuffer());
     return Response.fromApiResponse(ApiResponse.fromBuffer(buffer), (data) {});

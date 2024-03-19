@@ -1,4 +1,4 @@
-set(MystikoFlutterVersion "v0.0.2") # generated; do not edit
+set(MystikoFlutterVersion "v0.0.3") # generated; do not edit
 
 # Unlike the Windows & Linux CMakeLists.txt, this Android equivalent is just here
 # to download the Android binaries into src/main/jniLibs/ and does not build anything.
@@ -15,7 +15,7 @@ set(MystikoLibBridgeLibRoot "${CMAKE_CURRENT_SOURCE_DIR}/src/main/jniLibs")
 set(MystikoLibBridgeArchivePath "${CMAKE_CURRENT_SOURCE_DIR}/${MystikoFlutterVersion}.tar.gz")
 if(NOT EXISTS ${MystikoLibBridgeArchivePath})
   file(DOWNLOAD
-    "https://github.com/mystikonetwork/mystiko-flutter/releases/download/${MystikoFlutterVersion}/mystiko_lib_bridge-android.tar.gz"
+    "https://static.mystiko.network/lib/mystiko_dart/${MystikoFlutterVersion}/mystiko_lib_bridge-android.tar.gz"
     ${MystikoLibBridgeArchivePath}
     TLS_VERIFY ON
   )

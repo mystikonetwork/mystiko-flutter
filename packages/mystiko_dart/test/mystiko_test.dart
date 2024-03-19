@@ -1,7 +1,4 @@
 import 'package:mystiko_dart/mystiko_dart.dart';
-import 'package:mystiko_protos_dart/mystiko/api/index.dart';
-import 'package:mystiko_protos_dart/mystiko/common/index.dart';
-import 'package:mystiko_protos_dart/mystiko/core/index.dart';
 import 'package:test/test.dart';
 
 import 'utils.dart';

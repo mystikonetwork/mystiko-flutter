@@ -1,6 +1,3 @@
-import 'package:mystiko_protos_dart/mystiko/api/index.dart';
-import 'package:mystiko_protos_dart/mystiko/core/document/index.dart';
-import 'package:mystiko_protos_dart/mystiko/core/handler/index.dart';
 import 'package:mystiko_dart/mystiko_dart.dart';
 
 abstract class MystikoWalletApi {

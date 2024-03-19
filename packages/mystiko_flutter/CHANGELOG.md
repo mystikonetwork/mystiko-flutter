@@ -1,3 +1,7 @@
+## 0.0.3
+
+ - Fix some known bugs
+
 ## 0.0.2
 
  - add more interface

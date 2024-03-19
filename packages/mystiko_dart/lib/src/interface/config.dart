@@ -1,11 +1,6 @@
 import 'package:fixnum/fixnum.dart' as $fixnum;
 
 import 'package:mystiko_dart/mystiko_dart.dart';
-import 'package:mystiko_protos_dart/mystiko/api/index.dart';
-import 'package:mystiko_protos_dart/mystiko/common/index.dart';
-import 'package:mystiko_protos_dart/mystiko/config/bridge/index.dart';
-import 'package:mystiko_protos_dart/mystiko/config/contract/index.dart';
-import 'package:mystiko_protos_dart/mystiko/config/index.dart';
 
 abstract class MystikoConfigApi {
   Future<Response<MystikoConfig, ConfigError>> get();

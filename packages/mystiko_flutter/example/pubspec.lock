@@ -249,20 +249,20 @@ packages:
       path: "../../mystiko_dart"
       relative: true
     source: path
-    version: "0.0.2"
+    version: "0.0.3"
   mystiko_flutter:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "0.0.2"
+    version: "0.0.3"
   mystiko_protos_dart:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "."
-      ref: "0e8572d"
-      resolved-ref: "0e8572de20a87e0bd416349e8a68b6b8113d3863"
+      ref: df1799d
+      resolved-ref: df1799d3926e64fafda9f98d287b471b31448378
       url: "git@github.com:mystikonetwork/mystiko-protos-dart.git"
     source: git
     version: "1.0.0"
