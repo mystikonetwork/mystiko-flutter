@@ -32,8 +32,10 @@ class MystikoSynchronizerImpl extends MystikoSynchronizerApi {
   }
 
   @override
-  Future<Response<void, SynchronizerError>> reset(SynchronizerResetOptions options) async {
-    SynchronizerResetRequest request = SynchronizerResetRequest(options: options);
+  Future<Response<void, SynchronizerError>> reset(
+      SynchronizerResetOptions options) async {
+    SynchronizerResetRequest request =
+        SynchronizerResetRequest(options: options);
     Uint8List buffer =
         await bridge.synchronizerReset(request: request.writeToBuffer());
     return Response.fromApiResponse(ApiResponse.fromBuffer(buffer), (data) {});

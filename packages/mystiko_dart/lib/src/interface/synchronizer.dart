@@ -13,5 +13,6 @@ abstract class MystikoSynchronizerApi {
   Future<Response<SynchronizerStatus, SynchronizerError>> sync(
       SyncOptions options);
 
-  Future<Response<void, SynchronizerError>> reset(SynchronizerResetOptions options);
+  Future<Response<void, SynchronizerError>> reset(
+      SynchronizerResetOptions options);
 }

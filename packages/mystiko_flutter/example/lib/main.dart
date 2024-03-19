@@ -4,9 +4,6 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:mystiko_flutter/mystiko_flutter.dart';
-import 'package:mystiko_protos_dart/mystiko/api/index.dart';
-import 'package:mystiko_protos_dart/mystiko/common/index.dart';
-import 'package:mystiko_protos_dart/mystiko/core/index.dart';
 
 void main() {
   runApp(const MyApp());
