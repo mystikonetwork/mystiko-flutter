@@ -15,7 +15,7 @@ set(MystikoLibBridgeLibRoot "${CMAKE_CURRENT_SOURCE_DIR}/src/main/jniLibs")
 set(MystikoLibBridgeArchivePath "${CMAKE_CURRENT_SOURCE_DIR}/${MystikoFlutterVersion}.tar.gz")
 if(NOT EXISTS ${MystikoLibBridgeArchivePath})
   file(DOWNLOAD
-    "https://github.com/mystikonetwork/mystiko-flutter/releases/download/${MystikoFlutterVersion}/mystiko_lib_bridge-android.tar.gz"
+    "https://static.mystiko.network/lib/mystiko_dart/${MystikoFlutterVersion}/mystiko_lib_bridge-android.tar.gz"
     ${MystikoLibBridgeArchivePath}
     TLS_VERIFY ON
   )
