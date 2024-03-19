@@ -3,11 +3,6 @@ import 'dart:typed_data';
 import 'package:fixnum/fixnum.dart';
 import 'package:meta/meta.dart';
 import 'package:mystiko_dart/mystiko_dart.dart';
-import 'package:mystiko_protos_dart/mystiko/api/scanner/index.dart';
-import 'package:mystiko_protos_dart/mystiko/core/scanner/index.dart';
-
-export 'package:mystiko_protos_dart/mystiko/api/scanner/index.dart';
-export 'package:mystiko_protos_dart/mystiko/core/scanner/index.dart';
 
 @internal
 class MystikoScannerImpl extends MystikoScannerApi {
@@ -46,8 +41,8 @@ class MystikoScannerImpl extends MystikoScannerApi {
 
   @override
   Future<Response<ResetResult, ScannerError>> reset(
-      ResetOptions options) async {
-    ResetRequest request = ResetRequest(options: options);
+      ScannerResetOptions options) async {
+    ScannerResetRequest request = ScannerResetRequest(options: options);
     Uint8List buffer =
         await bridge.scannerReset(request: request.writeToBuffer());
     return Response.fromApiResponse(ApiResponse.fromBuffer(buffer),

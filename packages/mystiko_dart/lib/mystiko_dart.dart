@@ -32,3 +32,7 @@ export 'package:mystiko_protos_dart/mystiko/config/bridge/index.dart';
 export 'package:mystiko_protos_dart/mystiko/config/contract/index.dart';
 export 'package:mystiko_protos_dart/mystiko/config/index.dart';
 export 'package:mystiko_protos_dart/mystiko/service/index.dart';
+export 'package:mystiko_protos_dart/mystiko/api/scanner/index.dart';
+export 'package:mystiko_protos_dart/mystiko/core/scanner/index.dart';
+export 'package:mystiko_protos_dart/mystiko/api/synchronizer/index.dart';
+export 'package:mystiko_protos_dart/mystiko/core/synchronizer/index.dart';

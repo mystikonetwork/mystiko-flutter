@@ -3,7 +3,6 @@ import 'dart:io';
 
 import 'package:grpc/grpc.dart';
 import 'package:mystiko_dart/mystiko_dart.dart';
-import 'package:mystiko_protos_dart/mystiko/core/index.dart';
 import 'package:fixnum/fixnum.dart';
 
 DynamicLibrary createLibrary() {
