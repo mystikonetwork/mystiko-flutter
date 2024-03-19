@@ -16,6 +16,7 @@ dependencies:
     git:
       url: git@github.com:mystikonetwork/mystiko-flutter.git
       path: packages/mystiko_dart
+      ref: marco-dev
   mystiko_protos_dart:
     git:
       url: git@github.com:mystikonetwork/mystiko-protos-dart.git
