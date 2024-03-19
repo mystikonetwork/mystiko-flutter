@@ -1,5 +1,5 @@
 import 'package:grpc/grpc.dart';
-import 'package:mystiko_protos_dart/mystiko/core/index.dart';
+import 'package:mystiko_dart/mystiko_dart.dart';
 
 class TransactionService extends TransactionServiceBase {
   final Future<GetAddressResponse> Function() getAddressFunc;

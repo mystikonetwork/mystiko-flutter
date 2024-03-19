@@ -1,18 +1,7 @@
 import 'dart:typed_data';
-
 import 'package:meta/meta.dart';
-import 'package:mystiko_dart/src/common/response.dart';
-import 'package:mystiko_dart/src/interface/config.dart';
-
-import 'package:mystiko_dart/src/bridge_generated.dart';
-import 'package:mystiko_protos_dart/mystiko/api/config/index.dart';
-import 'package:mystiko_protos_dart/mystiko/api/index.dart';
-import 'package:mystiko_protos_dart/mystiko/common/index.dart';
-import 'package:mystiko_protos_dart/mystiko/config/bridge/index.dart';
-import 'package:mystiko_protos_dart/mystiko/config/contract/index.dart';
-import 'package:mystiko_protos_dart/mystiko/config/index.dart';
-
 import 'package:fixnum/fixnum.dart' as $fixnum;
+import 'package:mystiko_dart/mystiko_dart.dart';
 
 @internal
 class MystikoConfigImpl extends MystikoConfigApi {

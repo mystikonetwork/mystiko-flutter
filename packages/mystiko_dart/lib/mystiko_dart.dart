@@ -19,3 +19,16 @@ export 'src/interface/synchronizer.dart';
 export 'src/interface/wallet.dart';
 
 export 'src/common/response.dart';
+
+export 'package:mystiko_protos_dart/mystiko/api/index.dart';
+export 'package:mystiko_protos_dart/mystiko/core/index.dart';
+export 'package:mystiko_protos_dart/mystiko/api/handler/index.dart';
+export 'package:mystiko_protos_dart/mystiko/core/document/index.dart';
+export 'package:mystiko_protos_dart/mystiko/core/handler/index.dart';
+export 'package:mystiko_protos_dart/mystiko/storage/index.dart';
+export 'package:mystiko_protos_dart/mystiko/api/config/index.dart';
+export 'package:mystiko_protos_dart/mystiko/common/index.dart';
+export 'package:mystiko_protos_dart/mystiko/config/bridge/index.dart';
+export 'package:mystiko_protos_dart/mystiko/config/contract/index.dart';
+export 'package:mystiko_protos_dart/mystiko/config/index.dart';
+export 'package:mystiko_protos_dart/mystiko/service/index.dart';
