@@ -34,4 +34,8 @@ extension FlutterMystikoInterface on MystikoInterface {
   Future<MystikoSynchronizerApi> mystikoSynchronizerApi() async {
     return getMystikoSynchronizerApi(createLibraryImpl());
   }
+
+  Future<MystikoWalletApi> mystikoWalletApi() async {
+    return getMystikoWalletApi(createLibraryImpl());
+  }
 }
