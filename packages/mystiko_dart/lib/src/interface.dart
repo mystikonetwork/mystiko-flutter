@@ -6,7 +6,6 @@ import 'package:mystiko_dart/mystiko_dart.dart';
 import 'package:mystiko_dart/src/ffi/stub.dart'
     if (dart.library.io) 'package:mystiko_dart/src/ffi/io.dart'
     if (dart.library.html) 'package:mystiko_dart/src/ffi/web.dart';
-import 'package:mystiko_dart/src/grpc/server.dart';
 import 'package:mystiko_dart/src/impl/config_impl.dart';
 import 'package:mystiko_dart/src/impl/mystiko_impl.dart';
 
