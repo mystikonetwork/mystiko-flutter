@@ -1,5 +1,4 @@
 import 'package:mystiko_dart/mystiko_dart.dart';
-import 'package:mystiko_dart/src/grpc/server.dart';
 import 'package:test/test.dart';
 
 import 'utils.dart';
