@@ -19,6 +19,7 @@ export 'src/interface/synchronizer.dart';
 export 'src/interface/wallet.dart';
 
 export 'src/common/response.dart';
+export 'src/grpc/server.dart';
 
 export 'package:mystiko_protos_dart/mystiko/api/index.dart';
 export 'package:mystiko_protos_dart/mystiko/core/index.dart';
