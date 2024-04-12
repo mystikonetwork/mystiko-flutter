@@ -16,7 +16,7 @@ dependencies:
   mystiko_protos_dart:
     git:
       url: git@github.com:mystikonetwork/mystiko-protos-dart.git
-      ref: df1799d
+      ref: 3c5e247
   fixnum: ^1.1.0
   uuid: '>=3.0.6'
   logging: ^1.2.0
