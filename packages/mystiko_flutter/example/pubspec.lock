@@ -249,14 +249,14 @@ packages:
       path: "../../mystiko_dart"
       relative: true
     source: path
-    version: "0.0.4"
+    version: "0.0.5"
   mystiko_flutter:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "0.0.4"
+    version: "0.0.5"
   mystiko_protos_dart:
     dependency: transitive
     description:
