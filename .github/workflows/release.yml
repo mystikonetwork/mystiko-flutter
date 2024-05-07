@@ -36,6 +36,12 @@ jobs:
           toolchain: 1.75.0
       - name: Run Build MacOS(IOS) Scripts
         run: ./scripts/build-apple.sh
+      - name: Generate checksum
+        uses: jmgilman/actions-generate-checksum@v1
+        with:
+          patterns: |
+            platform-build/mystiko_lib_bridge.xcframework.zip
+          output: mystiko_lib_bridge.xcframework.zip.checksum.txt
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -43,6 +49,7 @@ jobs:
           draft: true
           files: |
             platform-build/mystiko_lib_bridge.xcframework.zip
+            mystiko_lib_bridge.xcframework.zip.checksum.txt
   # -------------------------- build for windows and linux --------------------------
   build-android:
     runs-on: ubuntu-latest
@@ -72,6 +79,12 @@ jobs:
           toolchain: 1.75.0
       - name: Run Build Android Scripts
         run: ./scripts/build-android.sh
+      - name: Generate checksum
+        uses: jmgilman/actions-generate-checksum@v1
+        with:
+          patterns: |
+            platform-build/mystiko_lib_bridge-android.tar.gz
+          output: mystiko_lib_bridge-android.tar.gz.checksum.txt
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -79,6 +92,7 @@ jobs:
           draft: true
           files: |
             platform-build/mystiko_lib_bridge-android.tar.gz
+            mystiko_lib_bridge-android.tar.gz.checksum.txt
   # -------------------------- build for windows and linux --------------------------
   build-others:
     runs-on: ubuntu-latest
@@ -110,6 +124,12 @@ jobs:
         run: cargo install cross --git https://github.com/cross-rs/cross
       - name: Run Build Other Scripts
         run: ./scripts/build-other.sh
+      - name: Generate checksum
+        uses: jmgilman/actions-generate-checksum@v1
+        with:
+          patterns: |
+            platform-build/mystiko_lib_bridge-other.tar.gz
+          output: mystiko_lib_bridge-other.tar.gz.checksum.txt
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -117,6 +137,7 @@ jobs:
           draft: true
           files: |
             platform-build/mystiko_lib_bridge-other.tar.gz
+            mystiko_lib_bridge-other.tar.gz.checksum.txt
   # -------------------------- Telegram Notification --------------------------
   telegram-notification:
     runs-on: ubuntu-latest
