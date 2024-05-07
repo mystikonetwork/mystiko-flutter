@@ -16,4 +16,7 @@ do
     rm packages/mystiko_flutter/$CMAKE_PLATFORM/*.bak
 done
 
+# pubspec.yaml - mystiko-dart version
+sed -i '' '/mystiko_dart:/,/^[^ ]/ s/ref: .*/ref: v0.0.6/' packages/mystiko_flutter/pubspec.yaml
+
 git add packages/mystiko_flutter/
