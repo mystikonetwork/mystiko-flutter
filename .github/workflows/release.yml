@@ -46,7 +46,7 @@ jobs:
           files: |
             platform-build/mystiko_lib_bridge.xcframework.zip
             mystiko_lib_bridge.xcframework.zip.checksum.txt
-  # -------------------------- build for windows and linux --------------------------
+  # -------------------------- build for android --------------------------
   build-android:
     runs-on: ubuntu-latest
     outputs:
