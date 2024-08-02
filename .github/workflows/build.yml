@@ -55,7 +55,7 @@ jobs:
 
       - name: Install flutter rust bridge codegen
         run: |
-          cargo install flutter_rust_bridge_codegen
+          cargo install flutter_rust_bridge_codegen@1.82.6
 
       - name: Run melos quality-check
         run: |
