@@ -22,10 +22,10 @@ Future<void> main() async {
   test('grpc server request get address', () async {
     // start grpc server
     await Mystiko.startGrpcServer(GrpcServerOptions(
-        port: port,
-        getAddressFunc: currentAddress,
-        sendTransactionFunc: sendTransaction,
-        personalSignFunc: personalSign,
+      port: port,
+      getAddressFunc: currentAddress,
+      sendTransactionFunc: sendTransaction,
+      personalSignFunc: personalSign,
     ));
     // create grpc client
     TransactionServiceClient client = createGrpcClient(port);
@@ -36,10 +36,10 @@ Future<void> main() async {
   test('grpc server request send transaction', () async {
     // start grpc server
     await Mystiko.startGrpcServer(GrpcServerOptions(
-        port: port,
-        getAddressFunc: currentAddress,
-        sendTransactionFunc: sendTransaction,
-        personalSignFunc: personalSign,
+      port: port,
+      getAddressFunc: currentAddress,
+      sendTransactionFunc: sendTransaction,
+      personalSignFunc: personalSign,
     ));
     // create grpc client
     TransactionServiceClient client = createGrpcClient(port);
