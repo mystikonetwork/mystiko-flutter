@@ -45,6 +45,11 @@ Future<SendTransactionResponse> sendTransaction(
       () => SendTransactionResponse(chainId: Int64(97), txHash: '0x123456'));
 }
 
+Future<PersonalSignResponse> personalSign(
+    ServiceCall call, PersonalSignRequest request) {
+  return Future(() => PersonalSignResponse(signature: '0x123456'));
+}
+
 TransactionServiceClient createGrpcClient(int port) {
   final channel = ClientChannel('127.0.0.1',
       port: port,

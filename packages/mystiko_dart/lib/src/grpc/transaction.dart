@@ -5,8 +5,11 @@ class TransactionService extends TransactionServiceBase {
   final Future<GetAddressResponse> Function() getAddressFunc;
   final Future<SendTransactionResponse> Function(SendTransactionRequest)
       sendTransactionFunc;
+  final Future<PersonalSignResponse> Function(
+      ServiceCall call, PersonalSignRequest request) personalSignFunc;
 
-  TransactionService(this.getAddressFunc, this.sendTransactionFunc);
+  TransactionService(
+      this.getAddressFunc, this.sendTransactionFunc, this.personalSignFunc);
 
   @override
   Future<GetAddressResponse> getAddress(
@@ -18,5 +21,11 @@ class TransactionService extends TransactionServiceBase {
   Future<SendTransactionResponse> sendTransaction(
       ServiceCall call, SendTransactionRequest request) {
     return sendTransactionFunc(request);
+  }
+
+  @override
+  Future<PersonalSignResponse> personalSign(
+      ServiceCall call, PersonalSignRequest request) {
+    return personalSignFunc(call, request);
   }
 }

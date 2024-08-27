@@ -117,8 +117,10 @@ class MystikoInterface {
 
   Future<void> startGrpcServer(GrpcServerOptions options) async {
     Server server = await createGrpcServer(ServerConfig(
-        getAddressFunc: options.getAddressFunc,
-        sendTransactionFunc: options.sendTransactionFunc));
+      getAddressFunc: options.getAddressFunc,
+      sendTransactionFunc: options.sendTransactionFunc,
+      personalSignFunc: options.personalSignFunc,
+    ));
     grpcServer = server;
 
     // start grpc server
