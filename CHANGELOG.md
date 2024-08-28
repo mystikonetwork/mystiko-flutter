@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-08-27
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`mystiko_dart` - `v0.0.8`](#mystiko_dart---v008)
+ - [`mystiko_flutter` - `v0.0.8`](#mystiko_flutter---v008)
+ - [`mystiko_flutter_example` - `v0.0.8`](#mystiko_flutter_example---v008)
+
+---
+
+#### `mystiko_dart` - `v0.0.8`
+
+#### `mystiko_flutter` - `v0.0.8`
+
+#### `mystiko_flutter_example` - `v0.0.8`
+
+
 ## 2024-08-02
 
 ### Changes
