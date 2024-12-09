@@ -273,6 +273,10 @@ abstract class MystikoLibBridge {
 
   FlutterRustBridgeTaskConstMeta get kChainAssetsConstMeta;
 
+  Future<Uint8List> assetsImport({required Uint8List request, dynamic hint});
+
+  FlutterRustBridgeTaskConstMeta get kAssetsImportConstMeta;
+
   /// spend api
   Future<Uint8List> quoteSpend({required Uint8List request, dynamic hint});
 
@@ -1471,6 +1475,24 @@ class MystikoLibBridgeImpl implements MystikoLibBridge {
   FlutterRustBridgeTaskConstMeta get kChainAssetsConstMeta =>
       const FlutterRustBridgeTaskConstMeta(
         debugName: "chain_assets",
+        argNames: ["request"],
+      );
+
+  Future<Uint8List> assetsImport({required Uint8List request, dynamic hint}) {
+    var arg0 = _platform.api2wire_uint_8_list(request);
+    return _platform.executeNormal(FlutterRustBridgeTask(
+      callFfi: (port_) => _platform.inner.wire_assets_import(port_, arg0),
+      parseSuccessData: _wire2api_uint_8_list,
+      parseErrorData: null,
+      constMeta: kAssetsImportConstMeta,
+      argValues: [request],
+      hint: hint,
+    ));
+  }
+
+  FlutterRustBridgeTaskConstMeta get kAssetsImportConstMeta =>
+      const FlutterRustBridgeTaskConstMeta(
+        debugName: "assets_import",
         argNames: ["request"],
       );
 

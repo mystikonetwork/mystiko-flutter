@@ -14,4 +14,7 @@ abstract class MystikoScannerApi {
 
   Future<Response<AssetsByChain, ScannerError>> chainAssets(
       Int64 chainId, AssetsOptions options);
+
+  Future<Response<AssetImportResult, ScannerError>> importAssets(
+      AssetImportOptions options);
 }

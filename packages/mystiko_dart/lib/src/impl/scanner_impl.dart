@@ -57,4 +57,14 @@ class MystikoScannerImpl extends MystikoScannerApi {
     return Response.fromApiResponse(ApiResponse.fromBuffer(buffer),
         (data) => ScanResponse.fromBuffer(data).result);
   }
+
+  @override
+  Future<Response<AssetImportResult, ScannerError>> importAssets(
+      AssetImportOptions options) async {
+    AssetImportRequest request = AssetImportRequest(options: options);
+    Uint8List buffer =
+        await bridge.assetsImport(request: request.writeToBuffer());
+    return Response.fromApiResponse(ApiResponse.fromBuffer(buffer),
+        (data) => AssetImportResponse.fromBuffer(data).result);
+  }
 }
