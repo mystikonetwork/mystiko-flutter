@@ -233,6 +233,10 @@ pub fn chain_assets(request: Vec<u8>) -> Vec<u8> {
     mystiko_lib::scanner::chain_assets(request).encode_to_vec()
 }
 
+pub fn assets_import(request: Vec<u8>) -> Vec<u8> {
+    mystiko_lib::scanner::import(request).encode_to_vec()
+}
+
 /// spend api
 pub fn quote_spend(request: Vec<u8>) -> Vec<u8> {
     mystiko_lib::spend::quote(request).encode_to_vec()
