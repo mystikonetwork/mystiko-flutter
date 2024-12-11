@@ -261,8 +261,8 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: e02335f
-      resolved-ref: e02335f751d1885c1b4ef807639243aa29eeccba
+      ref: f9eeec4
+      resolved-ref: f9eeec426f5037d66e8bf915f8ee3981cb86057f
       url: "git@github.com:mystikonetwork/mystiko-protos-dart.git"
     source: git
     version: "1.0.0"
