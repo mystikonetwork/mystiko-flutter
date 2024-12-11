@@ -12,7 +12,7 @@ for TARGET in \
 do
     rustup target add $TARGET
     # Apple's App Sandbox disallows SysV semaphores; use POSIX semaphores instead
-    RUSTFLAGS="-C link-args=-mios-version-min=10.0" cargo build -r --target=$TARGET
+    cargo build -r --target=$TARGET
 done
 
 # Create XCFramework zip
