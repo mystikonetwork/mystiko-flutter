@@ -40,31 +40,43 @@ class MystikoScannerImpl extends MystikoScannerApi {
   }
 
   @override
-  Future<Response<ResetResult, ScannerError>> reset(
+  Future<Response<ScannerResetResult, ScannerError>> reset(
       ScannerResetOptions options) async {
     ScannerResetRequest request = ScannerResetRequest(options: options);
     Uint8List buffer =
         await bridge.scannerReset(request: request.writeToBuffer());
     return Response.fromApiResponse(ApiResponse.fromBuffer(buffer),
-        (data) => ResetResponse.fromBuffer(data).result);
+        (data) => ScannerResetResponse.fromBuffer(data).result);
   }
 
   @override
-  Future<Response<ScanResult, ScannerError>> scan(ScanOptions options) async {
-    ScanRequest request = ScanRequest(options: options);
+  Future<Response<ScannerScanResult, ScannerError>> scan(
+      ScannerScanOptions options) async {
+    ScannerScanRequest request = ScannerScanRequest(options: options);
     Uint8List buffer =
         await bridge.scannerScan(request: request.writeToBuffer());
     return Response.fromApiResponse(ApiResponse.fromBuffer(buffer),
-        (data) => ScanResponse.fromBuffer(data).result);
+        (data) => ScannerScanResponse.fromBuffer(data).result);
   }
 
   @override
   Future<Response<AssetImportResult, ScannerError>> importAssets(
       AssetImportOptions options) async {
-    AssetImportRequest request = AssetImportRequest(options: options);
+    ScannerAssetImportRequest request =
+        ScannerAssetImportRequest(options: options);
     Uint8List buffer =
         await bridge.assetsImport(request: request.writeToBuffer());
     return Response.fromApiResponse(ApiResponse.fromBuffer(buffer),
-        (data) => AssetImportResponse.fromBuffer(data).result);
+        (data) => ScannerAssetImportResponse.fromBuffer(data).result);
+  }
+
+  @override
+  Future<Response<BalanceResult, ScannerError>> sync(
+      ScannerSyncOptions options) async {
+    ScannerSyncRequest request = ScannerSyncRequest(options: options);
+    Uint8List buffer =
+        await bridge.scannerSync(request: request.writeToBuffer());
+    return Response.fromApiResponse(ApiResponse.fromBuffer(buffer),
+        (data) => BalanceResponse.fromBuffer(data).result);
   }
 }

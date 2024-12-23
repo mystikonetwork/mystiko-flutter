@@ -237,6 +237,10 @@ pub fn assets_import(request: Vec<u8>) -> Vec<u8> {
     mystiko_lib::scanner::import(request).encode_to_vec()
 }
 
+pub fn scanner_sync(request: Vec<u8>) -> Vec<u8> {
+    mystiko_lib::scanner::sync(request).encode_to_vec()
+}
+
 /// spend api
 pub fn quote_spend(request: Vec<u8>) -> Vec<u8> {
     mystiko_lib::spend::quote(request).encode_to_vec()

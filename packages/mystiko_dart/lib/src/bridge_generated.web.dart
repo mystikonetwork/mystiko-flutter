@@ -205,6 +205,9 @@ class MystikoLibBridgeWasmModule implements WasmModule {
   external dynamic /* void */ wire_assets_import(
       NativePortType port_, Uint8List request);
 
+  external dynamic /* void */ wire_scanner_sync(
+      NativePortType port_, Uint8List request);
+
   external dynamic /* void */ wire_quote_spend(
       NativePortType port_, Uint8List request);
 
@@ -472,6 +475,9 @@ class MystikoLibBridgeWire
 
   void wire_assets_import(NativePortType port_, Uint8List request) =>
       wasmModule.wire_assets_import(port_, request);
+
+  void wire_scanner_sync(NativePortType port_, Uint8List request) =>
+      wasmModule.wire_scanner_sync(port_, request);
 
   void wire_quote_spend(NativePortType port_, Uint8List request) =>
       wasmModule.wire_quote_spend(port_, request);
