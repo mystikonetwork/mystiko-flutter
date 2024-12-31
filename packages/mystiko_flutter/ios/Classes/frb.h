@@ -142,6 +142,8 @@ void wire_chain_assets(int64_t port_, struct wire_uint_8_list *request);
 
 void wire_assets_import(int64_t port_, struct wire_uint_8_list *request);
 
+void wire_scanner_sync(int64_t port_, struct wire_uint_8_list *request);
+
 void wire_quote_spend(int64_t port_, struct wire_uint_8_list *request);
 
 void wire_summary_spend(int64_t port_, struct wire_uint_8_list *request);
@@ -264,6 +266,7 @@ static int64_t dummy_method_to_enforce_bundling(void) {
     dummy_var ^= ((int64_t) (void*) wire_assets);
     dummy_var ^= ((int64_t) (void*) wire_chain_assets);
     dummy_var ^= ((int64_t) (void*) wire_assets_import);
+    dummy_var ^= ((int64_t) (void*) wire_scanner_sync);
     dummy_var ^= ((int64_t) (void*) wire_quote_spend);
     dummy_var ^= ((int64_t) (void*) wire_summary_spend);
     dummy_var ^= ((int64_t) (void*) wire_create_spend);

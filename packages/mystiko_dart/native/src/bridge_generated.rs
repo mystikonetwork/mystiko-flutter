@@ -808,6 +808,19 @@ fn wire_assets_import_impl(port_: MessagePort, request: impl Wire2Api<Vec<u8>> +
         },
     )
 }
+fn wire_scanner_sync_impl(port_: MessagePort, request: impl Wire2Api<Vec<u8>> + UnwindSafe) {
+    FLUTTER_RUST_BRIDGE_HANDLER.wrap::<_, _, _, Vec<u8>, _>(
+        WrapInfo {
+            debug_name: "scanner_sync",
+            port: Some(port_),
+            mode: FfiCallMode::Normal,
+        },
+        move || {
+            let api_request = request.wire2api();
+            move |task_callback| Result::<_, ()>::Ok(scanner_sync(api_request))
+        },
+    )
+}
 fn wire_quote_spend_impl(port_: MessagePort, request: impl Wire2Api<Vec<u8>> + UnwindSafe) {
     FLUTTER_RUST_BRIDGE_HANDLER.wrap::<_, _, _, Vec<u8>, _>(
         WrapInfo {
@@ -1521,6 +1534,11 @@ mod web {
     }
 
     #[wasm_bindgen]
+    pub fn wire_scanner_sync(port_: MessagePort, request: Box<[u8]>) {
+        wire_scanner_sync_impl(port_, request)
+    }
+
+    #[wasm_bindgen]
     pub fn wire_quote_spend(port_: MessagePort, request: Box<[u8]>) {
         wire_quote_spend_impl(port_, request)
     }
@@ -2005,6 +2023,11 @@ mod io {
     #[no_mangle]
     pub extern "C" fn wire_assets_import(port_: i64, request: *mut wire_uint_8_list) {
         wire_assets_import_impl(port_, request)
+    }
+
+    #[no_mangle]
+    pub extern "C" fn wire_scanner_sync(port_: i64, request: *mut wire_uint_8_list) {
+        wire_scanner_sync_impl(port_, request)
     }
 
     #[no_mangle]

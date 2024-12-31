@@ -1,6 +1,6 @@
 name: mystiko_flutter
 description: "A new Flutter FFI plugin project."
-version: 0.1.0
+version: 0.1.1
 publish_to: none
 
 environment:
@@ -16,7 +16,7 @@ dependencies:
     git:
       url: git@github.com:mystikonetwork/mystiko-flutter.git
       path: packages/mystiko_dart
-      ref: v0.1.0
+      ref: v0.1.1
 dev_dependencies:
   ffi: ^2.0.2
   ffigen: ^9.0.0

@@ -1,6 +1,6 @@
 name: mystiko_dart
 description: A starting point for Dart libraries or applications.
-version: 0.1.0
+version: 0.1.1
 publish_to: none
 # repository: https://github.com/my_org/my_repo
 
@@ -16,7 +16,7 @@ dependencies:
   mystiko_protos_dart:
     git:
       url: git@github.com:mystikonetwork/mystiko-protos-dart.git
-      ref: f9eeec4
+      ref: 3f7e97c
   fixnum: ^1.1.0
   uuid: '>=3.0.6'
   logging: ^1.2.0

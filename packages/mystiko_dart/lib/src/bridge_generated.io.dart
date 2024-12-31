@@ -1093,6 +1093,23 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_assets_import = _wire_assets_importPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
+  void wire_scanner_sync(
+    int port_,
+    ffi.Pointer<wire_uint_8_list> request,
+  ) {
+    return _wire_scanner_sync(
+      port_,
+      request,
+    );
+  }
+
+  late final _wire_scanner_syncPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Int64, ffi.Pointer<wire_uint_8_list>)>>('wire_scanner_sync');
+  late final _wire_scanner_sync = _wire_scanner_syncPtr
+      .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
+
   void wire_quote_spend(
     int port_,
     ffi.Pointer<wire_uint_8_list> request,

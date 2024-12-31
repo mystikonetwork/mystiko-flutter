@@ -44,19 +44,20 @@ class MystikoSynchronizerImpl extends MystikoSynchronizerApi {
   @override
   Future<Response<SynchronizerStatus, SynchronizerError>> status(
       bool withContracts) async {
-    StatusRequest request = StatusRequest(withContracts: withContracts);
+    SynchronizerStatusRequest request =
+        SynchronizerStatusRequest(withContracts: withContracts);
     Uint8List buffer = await bridge.status(request: request.writeToBuffer());
     return Response.fromApiResponse(ApiResponse.fromBuffer(buffer),
-        (data) => StatusResponse.fromBuffer(data).status);
+        (data) => SynchronizerStatusResponse.fromBuffer(data).status);
   }
 
   @override
   Future<Response<SynchronizerStatus, SynchronizerError>> sync(
-      SyncOptions options) async {
-    SyncRequest request = SyncRequest(options: options);
+      SynchronizerSyncOptions options) async {
+    SynchronizerSyncRequest request = SynchronizerSyncRequest(options: options);
     Uint8List buffer =
         await bridge.synchronizerSync(request: request.writeToBuffer());
     return Response.fromApiResponse(ApiResponse.fromBuffer(buffer),
-        (data) => StatusResponse.fromBuffer(data).status);
+        (data) => SynchronizerStatusResponse.fromBuffer(data).status);
   }
 }
