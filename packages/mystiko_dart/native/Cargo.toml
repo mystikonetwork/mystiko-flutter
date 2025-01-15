@@ -15,6 +15,6 @@ anyhow = { version = "1.0.*" }
 serde = { version = "1.0.*" }
 serde_json = { version = "1.0.*" }
 prost = { version = "0.11.9" }
-mystiko_config = { git = "ssh://git@github.com/mystikonetwork/mystiko-static-config.git", rev = "1642923", features = ["fs"] }
-mystiko_lib = { git = "ssh://git@github.com/mystikonetwork/mystiko-rust.git", rev = "0b668bb" }
-mystiko_protos = { git = "ssh://git@github.com/mystikonetwork/mystiko-rust.git", rev = "0b668bb", default-features = false, features = ["mystiko-api-config-v1", "mystiko-api-handler-v1"] }
+mystiko_config = { git = "ssh://git@github.com/mystikonetwork/mystiko-static-config.git", rev = "a290629", features = ["fs"] }
+mystiko_lib = { git = "ssh://git@github.com/mystikonetwork/mystiko-rust.git", rev = "1f73b0c" }
+mystiko_protos = { git = "ssh://git@github.com/mystikonetwork/mystiko-rust.git", rev = "1f73b0c", default-features = false, features = ["mystiko-api-config-v1", "mystiko-api-handler-v1"] }
