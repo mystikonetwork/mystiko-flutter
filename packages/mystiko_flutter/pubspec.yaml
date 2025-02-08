@@ -16,7 +16,7 @@ dependencies:
     git:
       url: git@github.com:mystikonetwork/mystiko-flutter.git
       path: packages/mystiko_dart
-      ref: v0.0.6
+      ref: v0.1.3
 dev_dependencies:
   ffi: ^2.0.2
   ffigen: ^9.0.0
