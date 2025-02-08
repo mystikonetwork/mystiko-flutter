@@ -71,12 +71,12 @@ class MystikoScannerImpl extends MystikoScannerApi {
   }
 
   @override
-  Future<Response<BalanceResult, ScannerError>> sync(
+  Future<Response<ScannerSyncResult, ScannerError>> sync(
       ScannerSyncOptions options) async {
     ScannerSyncRequest request = ScannerSyncRequest(options: options);
     Uint8List buffer =
         await bridge.scannerSync(request: request.writeToBuffer());
     return Response.fromApiResponse(ApiResponse.fromBuffer(buffer),
-        (data) => BalanceResponse.fromBuffer(data).result);
+        (data) => ScannerSyncResponse.fromBuffer(data).result);
   }
 }

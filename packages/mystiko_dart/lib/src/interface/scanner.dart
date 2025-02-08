@@ -19,6 +19,6 @@ abstract class MystikoScannerApi {
   Future<Response<AssetImportResult, ScannerError>> importAssets(
       AssetImportOptions options);
 
-  Future<Response<BalanceResult, ScannerError>> sync(
+  Future<Response<ScannerSyncResult, ScannerError>> sync(
       ScannerSyncOptions options);
 }
