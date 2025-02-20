@@ -32,12 +32,12 @@ jobs:
       - name: Setup Dart
         uses: dart-lang/setup-dart@v1
         with:
-          sdk: 3.2.5
+          sdk: 3.6.2
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.16.8'
+          flutter-version: '3.27.4'
           channel: 'stable'
 
       - name: Setup Melos
