@@ -15,7 +15,7 @@ dependencies:
   grpc: ^3.2.4
   mystiko_protos_dart:
     git:
-      url: git@github.com:mystikonetwork/mystiko-protos-dart.git
+      url: https://github.com/mystikonetwork/mystiko-protos-dart
       ref: 9947abf
   fixnum: ^1.1.0
   uuid: '>=3.0.6'
