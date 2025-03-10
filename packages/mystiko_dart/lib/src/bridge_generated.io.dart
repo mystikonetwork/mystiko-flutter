@@ -51,88 +51,66 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
 
   /// The symbols are looked up with [lookup].
   MystikoLibBridgeWire.fromLookup(
-      ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
-          lookup)
-      : _lookup = lookup;
+    ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName) lookup,
+  ) : _lookup = lookup;
 
-  void store_dart_post_cobject(
-    DartPostCObjectFnType ptr,
-  ) {
-    return _store_dart_post_cobject(
-      ptr,
-    );
+  void store_dart_post_cobject(DartPostCObjectFnType ptr) {
+    return _store_dart_post_cobject(ptr);
   }
 
   late final _store_dart_post_cobjectPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(DartPostCObjectFnType)>>(
-          'store_dart_post_cobject');
+    'store_dart_post_cobject',
+  );
   late final _store_dart_post_cobject = _store_dart_post_cobjectPtr
       .asFunction<void Function(DartPostCObjectFnType)>();
 
-  Object get_dart_object(
-    int ptr,
-  ) {
-    return _get_dart_object(
-      ptr,
-    );
+  Object get_dart_object(int ptr) {
+    return _get_dart_object(ptr);
   }
 
   late final _get_dart_objectPtr =
       _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.UintPtr)>>(
-          'get_dart_object');
+    'get_dart_object',
+  );
   late final _get_dart_object =
       _get_dart_objectPtr.asFunction<Object Function(int)>();
 
-  void drop_dart_object(
-    int ptr,
-  ) {
-    return _drop_dart_object(
-      ptr,
-    );
+  void drop_dart_object(int ptr) {
+    return _drop_dart_object(ptr);
   }
 
   late final _drop_dart_objectPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.UintPtr)>>(
-          'drop_dart_object');
+    'drop_dart_object',
+  );
   late final _drop_dart_object =
       _drop_dart_objectPtr.asFunction<void Function(int)>();
 
-  int new_dart_opaque(
-    Object handle,
-  ) {
-    return _new_dart_opaque(
-      handle,
-    );
+  int new_dart_opaque(Object handle) {
+    return _new_dart_opaque(handle);
   }
 
   late final _new_dart_opaquePtr =
       _lookup<ffi.NativeFunction<ffi.UintPtr Function(ffi.Handle)>>(
-          'new_dart_opaque');
+    'new_dart_opaque',
+  );
   late final _new_dart_opaque =
       _new_dart_opaquePtr.asFunction<int Function(Object)>();
 
-  int init_frb_dart_api_dl(
-    ffi.Pointer<ffi.Void> obj,
-  ) {
-    return _init_frb_dart_api_dl(
-      obj,
-    );
+  int init_frb_dart_api_dl(ffi.Pointer<ffi.Void> obj) {
+    return _init_frb_dart_api_dl(obj);
   }
 
   late final _init_frb_dart_api_dlPtr =
       _lookup<ffi.NativeFunction<ffi.IntPtr Function(ffi.Pointer<ffi.Void>)>>(
-          'init_frb_dart_api_dl');
+    'init_frb_dart_api_dl',
+  );
   late final _init_frb_dart_api_dl = _init_frb_dart_api_dlPtr
       .asFunction<int Function(ffi.Pointer<ffi.Void>)>();
 
-  void wire_initialize(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> options,
-  ) {
-    return _wire_initialize(
-      port_,
-      options,
-    );
+  void wire_initialize(int port_, ffi.Pointer<wire_uint_8_list> options) {
+    return _wire_initialize(port_, options);
   }
 
   late final _wire_initializePtr = _lookup<
@@ -142,43 +120,33 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_initialize = _wire_initializePtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_is_initialized(
-    int port_,
-  ) {
-    return _wire_is_initialized(
-      port_,
-    );
+  void wire_is_initialized(int port_) {
+    return _wire_is_initialized(port_);
   }
 
   late final _wire_is_initializedPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int64)>>(
-          'wire_is_initialized');
+    'wire_is_initialized',
+  );
   late final _wire_is_initialized =
       _wire_is_initializedPtr.asFunction<void Function(int)>();
 
-  void wire_destroy(
-    int port_,
-  ) {
-    return _wire_destroy(
-      port_,
-    );
+  void wire_destroy(int port_) {
+    return _wire_destroy(port_);
   }
 
   late final _wire_destroyPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int64)>>('wire_destroy');
   late final _wire_destroy = _wire_destroyPtr.asFunction<void Function(int)>();
 
-  void wire_get_config(
-    int port_,
-  ) {
-    return _wire_get_config(
-      port_,
-    );
+  void wire_get_config(int port_) {
+    return _wire_get_config(port_);
   }
 
   late final _wire_get_configPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int64)>>(
-          'wire_get_config');
+    'wire_get_config',
+  );
   late final _wire_get_config =
       _wire_get_configPtr.asFunction<void Function(int)>();
 
@@ -186,10 +154,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_find_default_circuit(
-      port_,
-      request,
-    );
+    return _wire_find_default_circuit(port_, request);
   }
 
   late final _wire_find_default_circuitPtr = _lookup<
@@ -199,14 +164,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_find_default_circuit = _wire_find_default_circuitPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_find_circuit(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_find_circuit(
-      port_,
-      request,
-    );
+  void wire_find_circuit(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_find_circuit(port_, request);
   }
 
   late final _wire_find_circuitPtr = _lookup<
@@ -216,14 +175,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_find_circuit = _wire_find_circuitPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_find_chain(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_find_chain(
-      port_,
-      request,
-    );
+  void wire_find_chain(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_find_chain(port_, request);
   }
 
   late final _wire_find_chainPtr = _lookup<
@@ -233,14 +186,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_find_chain = _wire_find_chainPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_find_peer_chains(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_find_peer_chains(
-      port_,
-      request,
-    );
+  void wire_find_peer_chains(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_find_peer_chains(port_, request);
   }
 
   late final _wire_find_peer_chainsPtr = _lookup<
@@ -254,10 +201,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_find_asset_symbols(
-      port_,
-      request,
-    );
+    return _wire_find_asset_symbols(port_, request);
   }
 
   late final _wire_find_asset_symbolsPtr = _lookup<
@@ -267,14 +211,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_find_asset_symbols = _wire_find_asset_symbolsPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_find_bridge(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_find_bridge(
-      port_,
-      request,
-    );
+  void wire_find_bridge(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_find_bridge(port_, request);
   }
 
   late final _wire_find_bridgePtr = _lookup<
@@ -284,14 +222,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_find_bridge = _wire_find_bridgePtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_find_bridges(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_find_bridges(
-      port_,
-      request,
-    );
+  void wire_find_bridges(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_find_bridges(port_, request);
   }
 
   late final _wire_find_bridgesPtr = _lookup<
@@ -305,10 +237,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_find_deposit_contract(
-      port_,
-      request,
-    );
+    return _wire_find_deposit_contract(port_, request);
   }
 
   late final _wire_find_deposit_contractPtr = _lookup<
@@ -322,10 +251,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_find_deposit_contract_by_address(
-      port_,
-      request,
-    );
+    return _wire_find_deposit_contract_by_address(port_, request);
   }
 
   late final _wire_find_deposit_contract_by_addressPtr = _lookup<
@@ -340,10 +266,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_find_pool_contract(
-      port_,
-      request,
-    );
+    return _wire_find_pool_contract(port_, request);
   }
 
   late final _wire_find_pool_contractPtr = _lookup<
@@ -357,10 +280,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_find_pool_contracts(
-      port_,
-      request,
-    );
+    return _wire_find_pool_contracts(port_, request);
   }
 
   late final _wire_find_pool_contractsPtr = _lookup<
@@ -374,10 +294,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_find_pool_contract_by_address(
-      port_,
-      request,
-    );
+    return _wire_find_pool_contract_by_address(port_, request);
   }
 
   late final _wire_find_pool_contract_by_addressPtr = _lookup<
@@ -392,10 +309,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_find_contract_by_address(
-      port_,
-      request,
-    );
+    return _wire_find_contract_by_address(port_, request);
   }
 
   late final _wire_find_contract_by_addressPtr = _lookup<
@@ -409,10 +323,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_get_transaction_url(
-      port_,
-      request,
-    );
+    return _wire_get_transaction_url(port_, request);
   }
 
   late final _wire_get_transaction_urlPtr = _lookup<
@@ -426,10 +337,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_supported_asset_symbols(
-      port_,
-      request,
-    );
+    return _wire_supported_asset_symbols(port_, request);
   }
 
   late final _wire_supported_asset_symbolsPtr = _lookup<
@@ -439,14 +347,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_supported_asset_symbols = _wire_supported_asset_symbolsPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_create_account(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_create_account(
-      port_,
-      request,
-    );
+  void wire_create_account(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_create_account(port_, request);
   }
 
   late final _wire_create_accountPtr = _lookup<
@@ -456,14 +358,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_create_account = _wire_create_accountPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_count(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_count(
-      port_,
-      request,
-    );
+  void wire_count(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_count(port_, request);
   }
 
   late final _wire_countPtr = _lookup<
@@ -473,28 +369,19 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_count = _wire_countPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_count_all(
-    int port_,
-  ) {
-    return _wire_count_all(
-      port_,
-    );
+  void wire_count_all(int port_) {
+    return _wire_count_all(port_);
   }
 
   late final _wire_count_allPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int64)>>(
-          'wire_count_all');
+    'wire_count_all',
+  );
   late final _wire_count_all =
       _wire_count_allPtr.asFunction<void Function(int)>();
 
-  void wire_find(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_find(
-      port_,
-      request,
-    );
+  void wire_find(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_find(port_, request);
   }
 
   late final _wire_findPtr = _lookup<
@@ -504,14 +391,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_find = _wire_findPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_find_by_id(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_find_by_id(
-      port_,
-      request,
-    );
+  void wire_find_by_id(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_find_by_id(port_, request);
   }
 
   late final _wire_find_by_idPtr = _lookup<
@@ -525,10 +406,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_find_by_shielded_address(
-      port_,
-      request,
-    );
+    return _wire_find_by_shielded_address(port_, request);
   }
 
   late final _wire_find_by_shielded_addressPtr = _lookup<
@@ -542,10 +420,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_find_by_public_key(
-      port_,
-      request,
-    );
+    return _wire_find_by_public_key(port_, request);
   }
 
   late final _wire_find_by_public_keyPtr = _lookup<
@@ -555,14 +430,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_find_by_public_key = _wire_find_by_public_keyPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_update_by_id(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_update_by_id(
-      port_,
-      request,
-    );
+  void wire_update_by_id(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_update_by_id(port_, request);
   }
 
   late final _wire_update_by_idPtr = _lookup<
@@ -576,10 +445,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_update_by_shielded_address(
-      port_,
-      request,
-    );
+    return _wire_update_by_shielded_address(port_, request);
   }
 
   late final _wire_update_by_shielded_addressPtr = _lookup<
@@ -594,10 +460,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_update_by_public_key(
-      port_,
-      request,
-    );
+    return _wire_update_by_public_key(port_, request);
   }
 
   late final _wire_update_by_public_keyPtr = _lookup<
@@ -611,10 +474,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_update_encryption(
-      port_,
-      request,
-    );
+    return _wire_update_encryption(port_, request);
   }
 
   late final _wire_update_encryptionPtr = _lookup<
@@ -628,10 +488,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_export_secret_key_by_id(
-      port_,
-      request,
-    );
+    return _wire_export_secret_key_by_id(port_, request);
   }
 
   late final _wire_export_secret_key_by_idPtr = _lookup<
@@ -645,10 +502,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_export_secret_key_by_shielded_address(
-      port_,
-      request,
-    );
+    return _wire_export_secret_key_by_shielded_address(port_, request);
   }
 
   late final _wire_export_secret_key_by_shielded_addressPtr = _lookup<
@@ -663,10 +517,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_export_secret_key_by_public_key(
-      port_,
-      request,
-    );
+    return _wire_export_secret_key_by_public_key(port_, request);
   }
 
   late final _wire_export_secret_key_by_public_keyPtr = _lookup<
@@ -677,14 +528,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
       _wire_export_secret_key_by_public_keyPtr
           .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_quote_deposit(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_quote_deposit(
-      port_,
-      request,
-    );
+  void wire_quote_deposit(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_quote_deposit(port_, request);
   }
 
   late final _wire_quote_depositPtr = _lookup<
@@ -694,14 +539,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_quote_deposit = _wire_quote_depositPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_summary_deposit(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_summary_deposit(
-      port_,
-      request,
-    );
+  void wire_summary_deposit(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_summary_deposit(port_, request);
   }
 
   late final _wire_summary_depositPtr = _lookup<
@@ -711,14 +550,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_summary_deposit = _wire_summary_depositPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_create_deposit(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_create_deposit(
-      port_,
-      request,
-    );
+  void wire_create_deposit(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_create_deposit(port_, request);
   }
 
   late final _wire_create_depositPtr = _lookup<
@@ -728,14 +561,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_create_deposit = _wire_create_depositPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_send_deposit(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_send_deposit(
-      port_,
-      request,
-    );
+  void wire_send_deposit(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_send_deposit(port_, request);
   }
 
   late final _wire_send_depositPtr = _lookup<
@@ -749,10 +576,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_send_deposit_with_grpc(
-      port_,
-      request,
-    );
+    return _wire_send_deposit_with_grpc(port_, request);
   }
 
   late final _wire_send_deposit_with_grpcPtr = _lookup<
@@ -762,14 +586,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_send_deposit_with_grpc = _wire_send_deposit_with_grpcPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_find_deposit(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_find_deposit(
-      port_,
-      request,
-    );
+  void wire_find_deposit(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_find_deposit(port_, request);
   }
 
   late final _wire_find_depositPtr = _lookup<
@@ -779,28 +597,19 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_find_deposit = _wire_find_depositPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_find_all_deposit(
-    int port_,
-  ) {
-    return _wire_find_all_deposit(
-      port_,
-    );
+  void wire_find_all_deposit(int port_) {
+    return _wire_find_all_deposit(port_);
   }
 
   late final _wire_find_all_depositPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int64)>>(
-          'wire_find_all_deposit');
+    'wire_find_all_deposit',
+  );
   late final _wire_find_all_deposit =
       _wire_find_all_depositPtr.asFunction<void Function(int)>();
 
-  void wire_find_one_deposit(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_find_one_deposit(
-      port_,
-      request,
-    );
+  void wire_find_one_deposit(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_find_one_deposit(port_, request);
   }
 
   late final _wire_find_one_depositPtr = _lookup<
@@ -814,10 +623,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_deposit_find_by_id(
-      port_,
-      request,
-    );
+    return _wire_deposit_find_by_id(port_, request);
   }
 
   late final _wire_deposit_find_by_idPtr = _lookup<
@@ -827,14 +633,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_deposit_find_by_id = _wire_deposit_find_by_idPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_count_deposit(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_count_deposit(
-      port_,
-      request,
-    );
+  void wire_count_deposit(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_count_deposit(port_, request);
   }
 
   late final _wire_count_depositPtr = _lookup<
@@ -844,28 +644,19 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_count_deposit = _wire_count_depositPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_count_all_deposit(
-    int port_,
-  ) {
-    return _wire_count_all_deposit(
-      port_,
-    );
+  void wire_count_all_deposit(int port_) {
+    return _wire_count_all_deposit(port_);
   }
 
   late final _wire_count_all_depositPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int64)>>(
-          'wire_count_all_deposit');
+    'wire_count_all_deposit',
+  );
   late final _wire_count_all_deposit =
       _wire_count_all_depositPtr.asFunction<void Function(int)>();
 
-  void wire_deposit_update(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_deposit_update(
-      port_,
-      request,
-    );
+  void wire_deposit_update(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_deposit_update(port_, request);
   }
 
   late final _wire_deposit_updatePtr = _lookup<
@@ -879,10 +670,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_deposit_update_batch(
-      port_,
-      request,
-    );
+    return _wire_deposit_update_batch(port_, request);
   }
 
   late final _wire_deposit_update_batchPtr = _lookup<
@@ -896,10 +684,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_deposit_update_by_filter(
-      port_,
-      request,
-    );
+    return _wire_deposit_update_by_filter(port_, request);
   }
 
   late final _wire_deposit_update_by_filterPtr = _lookup<
@@ -913,10 +698,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_deposit_update_all(
-      port_,
-      request,
-    );
+    return _wire_deposit_update_all(port_, request);
   }
 
   late final _wire_deposit_update_allPtr = _lookup<
@@ -926,14 +708,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_deposit_update_all = _wire_deposit_update_allPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_deposit_delete(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_deposit_delete(
-      port_,
-      request,
-    );
+  void wire_deposit_delete(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_deposit_delete(port_, request);
   }
 
   late final _wire_deposit_deletePtr = _lookup<
@@ -947,10 +723,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_deposit_delete_batch(
-      port_,
-      request,
-    );
+    return _wire_deposit_delete_batch(port_, request);
   }
 
   late final _wire_deposit_delete_batchPtr = _lookup<
@@ -964,10 +737,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_deposit_delete_by_filter(
-      port_,
-      request,
-    );
+    return _wire_deposit_delete_by_filter(port_, request);
   }
 
   late final _wire_deposit_delete_by_filterPtr = _lookup<
@@ -977,28 +747,19 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_deposit_delete_by_filter = _wire_deposit_delete_by_filterPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_deposit_delete_all(
-    int port_,
-  ) {
-    return _wire_deposit_delete_all(
-      port_,
-    );
+  void wire_deposit_delete_all(int port_) {
+    return _wire_deposit_delete_all(port_);
   }
 
   late final _wire_deposit_delete_allPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int64)>>(
-          'wire_deposit_delete_all');
+    'wire_deposit_delete_all',
+  );
   late final _wire_deposit_delete_all =
       _wire_deposit_delete_allPtr.asFunction<void Function(int)>();
 
-  void wire_scanner_scan(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_scanner_scan(
-      port_,
-      request,
-    );
+  void wire_scanner_scan(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_scanner_scan(port_, request);
   }
 
   late final _wire_scanner_scanPtr = _lookup<
@@ -1008,14 +769,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_scanner_scan = _wire_scanner_scanPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_scanner_reset(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_scanner_reset(
-      port_,
-      request,
-    );
+  void wire_scanner_reset(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_scanner_reset(port_, request);
   }
 
   late final _wire_scanner_resetPtr = _lookup<
@@ -1025,14 +780,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_scanner_reset = _wire_scanner_resetPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_balance(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_balance(
-      port_,
-      request,
-    );
+  void wire_balance(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_balance(port_, request);
   }
 
   late final _wire_balancePtr = _lookup<
@@ -1042,14 +791,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_balance = _wire_balancePtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_assets(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_assets(
-      port_,
-      request,
-    );
+  void wire_assets(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_assets(port_, request);
   }
 
   late final _wire_assetsPtr = _lookup<
@@ -1059,14 +802,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_assets = _wire_assetsPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_chain_assets(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_chain_assets(
-      port_,
-      request,
-    );
+  void wire_chain_assets(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_chain_assets(port_, request);
   }
 
   late final _wire_chain_assetsPtr = _lookup<
@@ -1076,14 +813,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_chain_assets = _wire_chain_assetsPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_assets_import(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_assets_import(
-      port_,
-      request,
-    );
+  void wire_assets_import(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_assets_import(port_, request);
   }
 
   late final _wire_assets_importPtr = _lookup<
@@ -1093,14 +824,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_assets_import = _wire_assets_importPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_scanner_sync(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_scanner_sync(
-      port_,
-      request,
-    );
+  void wire_scanner_sync(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_scanner_sync(port_, request);
   }
 
   late final _wire_scanner_syncPtr = _lookup<
@@ -1110,14 +835,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_scanner_sync = _wire_scanner_syncPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_quote_spend(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_quote_spend(
-      port_,
-      request,
-    );
+  void wire_quote_spend(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_quote_spend(port_, request);
   }
 
   late final _wire_quote_spendPtr = _lookup<
@@ -1127,14 +846,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_quote_spend = _wire_quote_spendPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_summary_spend(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_summary_spend(
-      port_,
-      request,
-    );
+  void wire_summary_spend(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_summary_spend(port_, request);
   }
 
   late final _wire_summary_spendPtr = _lookup<
@@ -1144,14 +857,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_summary_spend = _wire_summary_spendPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_create_spend(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_create_spend(
-      port_,
-      request,
-    );
+  void wire_create_spend(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_create_spend(port_, request);
   }
 
   late final _wire_create_spendPtr = _lookup<
@@ -1161,14 +868,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_create_spend = _wire_create_spendPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_send_spend(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_send_spend(
-      port_,
-      request,
-    );
+  void wire_send_spend(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_send_spend(port_, request);
   }
 
   late final _wire_send_spendPtr = _lookup<
@@ -1182,10 +883,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_send_spend_with_grpc(
-      port_,
-      request,
-    );
+    return _wire_send_spend_with_grpc(port_, request);
   }
 
   late final _wire_send_spend_with_grpcPtr = _lookup<
@@ -1195,14 +893,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_send_spend_with_grpc = _wire_send_spend_with_grpcPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_find_spend(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_find_spend(
-      port_,
-      request,
-    );
+  void wire_find_spend(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_find_spend(port_, request);
   }
 
   late final _wire_find_spendPtr = _lookup<
@@ -1212,28 +904,19 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_find_spend = _wire_find_spendPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_find_all_spend(
-    int port_,
-  ) {
-    return _wire_find_all_spend(
-      port_,
-    );
+  void wire_find_all_spend(int port_) {
+    return _wire_find_all_spend(port_);
   }
 
   late final _wire_find_all_spendPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int64)>>(
-          'wire_find_all_spend');
+    'wire_find_all_spend',
+  );
   late final _wire_find_all_spend =
       _wire_find_all_spendPtr.asFunction<void Function(int)>();
 
-  void wire_find_one_spend(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_find_one_spend(
-      port_,
-      request,
-    );
+  void wire_find_one_spend(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_find_one_spend(port_, request);
   }
 
   late final _wire_find_one_spendPtr = _lookup<
@@ -1243,14 +926,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_find_one_spend = _wire_find_one_spendPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_spend_find_by_id(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_spend_find_by_id(
-      port_,
-      request,
-    );
+  void wire_spend_find_by_id(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_spend_find_by_id(port_, request);
   }
 
   late final _wire_spend_find_by_idPtr = _lookup<
@@ -1260,14 +937,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_spend_find_by_id = _wire_spend_find_by_idPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_count_spend(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_count_spend(
-      port_,
-      request,
-    );
+  void wire_count_spend(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_count_spend(port_, request);
   }
 
   late final _wire_count_spendPtr = _lookup<
@@ -1277,28 +948,19 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_count_spend = _wire_count_spendPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_count_all_spend(
-    int port_,
-  ) {
-    return _wire_count_all_spend(
-      port_,
-    );
+  void wire_count_all_spend(int port_) {
+    return _wire_count_all_spend(port_);
   }
 
   late final _wire_count_all_spendPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int64)>>(
-          'wire_count_all_spend');
+    'wire_count_all_spend',
+  );
   late final _wire_count_all_spend =
       _wire_count_all_spendPtr.asFunction<void Function(int)>();
 
-  void wire_spend_update(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_spend_update(
-      port_,
-      request,
-    );
+  void wire_spend_update(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_spend_update(port_, request);
   }
 
   late final _wire_spend_updatePtr = _lookup<
@@ -1312,10 +974,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_spend_update_batch(
-      port_,
-      request,
-    );
+    return _wire_spend_update_batch(port_, request);
   }
 
   late final _wire_spend_update_batchPtr = _lookup<
@@ -1329,10 +988,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_spend_update_by_filter(
-      port_,
-      request,
-    );
+    return _wire_spend_update_by_filter(port_, request);
   }
 
   late final _wire_spend_update_by_filterPtr = _lookup<
@@ -1342,14 +998,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_spend_update_by_filter = _wire_spend_update_by_filterPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_spend_update_all(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_spend_update_all(
-      port_,
-      request,
-    );
+  void wire_spend_update_all(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_spend_update_all(port_, request);
   }
 
   late final _wire_spend_update_allPtr = _lookup<
@@ -1359,14 +1009,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_spend_update_all = _wire_spend_update_allPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_spend_delete(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_spend_delete(
-      port_,
-      request,
-    );
+  void wire_spend_delete(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_spend_delete(port_, request);
   }
 
   late final _wire_spend_deletePtr = _lookup<
@@ -1380,10 +1024,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_spend_delete_batch(
-      port_,
-      request,
-    );
+    return _wire_spend_delete_batch(port_, request);
   }
 
   late final _wire_spend_delete_batchPtr = _lookup<
@@ -1397,10 +1038,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_spend_delete_by_filter(
-      port_,
-      request,
-    );
+    return _wire_spend_delete_by_filter(port_, request);
   }
 
   late final _wire_spend_delete_by_filterPtr = _lookup<
@@ -1410,17 +1048,14 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_spend_delete_by_filter = _wire_spend_delete_by_filterPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_spend_delete_all(
-    int port_,
-  ) {
-    return _wire_spend_delete_all(
-      port_,
-    );
+  void wire_spend_delete_all(int port_) {
+    return _wire_spend_delete_all(port_);
   }
 
   late final _wire_spend_delete_allPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int64)>>(
-          'wire_spend_delete_all');
+    'wire_spend_delete_all',
+  );
   late final _wire_spend_delete_all =
       _wire_spend_delete_allPtr.asFunction<void Function(int)>();
 
@@ -1428,10 +1063,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_chain_synced_block(
-      port_,
-      request,
-    );
+    return _wire_chain_synced_block(port_, request);
   }
 
   late final _wire_chain_synced_blockPtr = _lookup<
@@ -1445,10 +1077,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_contract_synced_block(
-      port_,
-      request,
-    );
+    return _wire_contract_synced_block(port_, request);
   }
 
   late final _wire_contract_synced_blockPtr = _lookup<
@@ -1458,14 +1087,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_contract_synced_block = _wire_contract_synced_blockPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_status(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_status(
-      port_,
-      request,
-    );
+  void wire_status(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_status(port_, request);
   }
 
   late final _wire_statusPtr = _lookup<
@@ -1479,10 +1102,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_synchronizer_sync(
-      port_,
-      request,
-    );
+    return _wire_synchronizer_sync(port_, request);
   }
 
   late final _wire_synchronizer_syncPtr = _lookup<
@@ -1496,10 +1116,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_synchronizer_reset(
-      port_,
-      request,
-    );
+    return _wire_synchronizer_reset(port_, request);
   }
 
   late final _wire_synchronizer_resetPtr = _lookup<
@@ -1509,14 +1126,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_synchronizer_reset = _wire_synchronizer_resetPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_create_wallet(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_create_wallet(
-      port_,
-      request,
-    );
+  void wire_create_wallet(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_create_wallet(port_, request);
   }
 
   late final _wire_create_walletPtr = _lookup<
@@ -1526,28 +1137,19 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_create_wallet = _wire_create_walletPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_check_current(
-    int port_,
-  ) {
-    return _wire_check_current(
-      port_,
-    );
+  void wire_check_current(int port_) {
+    return _wire_check_current(port_);
   }
 
   late final _wire_check_currentPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int64)>>(
-          'wire_check_current');
+    'wire_check_current',
+  );
   late final _wire_check_current =
       _wire_check_currentPtr.asFunction<void Function(int)>();
 
-  void wire_check_password(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_check_password(
-      port_,
-      request,
-    );
+  void wire_check_password(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_check_password(port_, request);
   }
 
   late final _wire_check_passwordPtr = _lookup<
@@ -1557,14 +1159,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_check_password = _wire_check_passwordPtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  void wire_update_password(
-    int port_,
-    ffi.Pointer<wire_uint_8_list> request,
-  ) {
-    return _wire_update_password(
-      port_,
-      request,
-    );
+  void wire_update_password(int port_, ffi.Pointer<wire_uint_8_list> request) {
+    return _wire_update_password(port_, request);
   }
 
   late final _wire_update_passwordPtr = _lookup<
@@ -1578,10 +1174,7 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
     int port_,
     ffi.Pointer<wire_uint_8_list> request,
   ) {
-    return _wire_export_mnemonic_phrase(
-      port_,
-      request,
-    );
+    return _wire_export_mnemonic_phrase(port_, request);
   }
 
   late final _wire_export_mnemonic_phrasePtr = _lookup<
@@ -1591,12 +1184,8 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _wire_export_mnemonic_phrase = _wire_export_mnemonic_phrasePtr
       .asFunction<void Function(int, ffi.Pointer<wire_uint_8_list>)>();
 
-  ffi.Pointer<wire_uint_8_list> new_uint_8_list_0(
-    int len,
-  ) {
-    return _new_uint_8_list_0(
-      len,
-    );
+  ffi.Pointer<wire_uint_8_list> new_uint_8_list_0(int len) {
+    return _new_uint_8_list_0(len);
   }
 
   late final _new_uint_8_list_0Ptr = _lookup<
@@ -1606,17 +1195,14 @@ class MystikoLibBridgeWire implements FlutterRustBridgeWireBase {
   late final _new_uint_8_list_0 = _new_uint_8_list_0Ptr
       .asFunction<ffi.Pointer<wire_uint_8_list> Function(int)>();
 
-  void free_WireSyncReturn(
-    WireSyncReturn ptr,
-  ) {
-    return _free_WireSyncReturn(
-      ptr,
-    );
+  void free_WireSyncReturn(WireSyncReturn ptr) {
+    return _free_WireSyncReturn(ptr);
   }
 
   late final _free_WireSyncReturnPtr =
       _lookup<ffi.NativeFunction<ffi.Void Function(WireSyncReturn)>>(
-          'free_WireSyncReturn');
+    'free_WireSyncReturn',
+  );
   late final _free_WireSyncReturn =
       _free_WireSyncReturnPtr.asFunction<void Function(WireSyncReturn)>();
 }
