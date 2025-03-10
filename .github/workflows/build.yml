@@ -51,7 +51,12 @@ jobs:
           melos run quality-check
 
       - name: Check Dirty Files
-        run: git diff --quiet || (echo "some generated files are not included in repo" && exit 1)
+        run: |
+          if ! git diff --quiet; then
+            echo "Some generated files are not included in the repo:"
+            git diff --name-only
+            exit 1
+          fi
 
       - name: Telegram Failure Notification
         uses: appleboy/telegram-action@master
